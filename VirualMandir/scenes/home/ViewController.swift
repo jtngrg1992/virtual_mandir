@@ -14,7 +14,16 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .red
         
-        let test = VirtualTempleView(frame: .zero)
+        let gods = [
+            God(id: 1, name: "Lord Hanuman", image: UIImage(named: "hanuman")!),
+            God(id: 1, name: "Lord Hanuman", image: UIImage(named: "hanuman")!)
+        ]
+        
+        let v = GodsCarouselBuilder.build(withGods: gods)
+        
+        v.frame = CGRect(origin: CGPoint(x: 10, y: 100), size: CGSize(width: UIScreen.main
+                                                                        .bounds.width, height: 200))
+        view.addSubview(v)
     }
 
 

@@ -23,19 +23,4 @@ class View: UIView, CustomUIKitViewing {
     required init?(coder: NSCoder) {
         fatalError(CustomUIKitError.initCoderNotImplemented.localizedDescription)
     }
-    
-    func addConstraint(withVisualFormatLanguage visualFormat: String, views: [String:Any]) {
-        NSLayoutConstraint.constraints(withVisualFormat: visualFormat,
-                                       options: NSLayoutConstraint.FormatOptions(),
-                                       metrics: nil,
-                                       views: views)
-    }
-    
-    func pinHorizontally(_ view: UIView) {
-        addConstraint(withVisualFormatLanguage: "H:|[v0]|", views: ["v0" : view])
-    }
-    
-    func pinVertically(_ view: UIView) {
-        addConstraint(withVisualFormatLanguage: "V:|[v0]|", views: ["v0" : view])
-    }
 }

@@ -28,6 +28,8 @@ class GodsCarouselCollectionViewCell: CollectionViewCell {
     }
     
     override func setup() {
-        
+        contentView.addSubview(godImageView)
+        contentView.pinVertically(godImageView)
+        contentView.pinHorizontally(godImageView)
     }
 }

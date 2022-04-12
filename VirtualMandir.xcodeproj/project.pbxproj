@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
+		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
 		13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1928048F160033A96B /* AppDelegate.swift */; };
 		13D35A1E28048F160033A96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1D28048F160033A96B /* ViewController.swift */; };
 		13D35A2328048F170033A96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D35A2228048F170033A96B /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
 		13D35A1628048F160033A96B /* VirtualMandir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualMandir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D35A1928048F160033A96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D35A1D28048F160033A96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		13D35A4C28060FD90033A96B /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				13693C37280618E800F71783 /* UIView+Extensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				13D35A4528060BE00033A96B /* GodsCarousel.swift */,
 				13D35A52280616650033A96B /* GodsCarouselViewModel.swift */,
 				13D35A54280616870033A96B /* GodsCarouselCollectionViewCell.swift */,
+				13693C392806194800F71783 /* GodsCarouselBuilder.swift */,
 			);
 			path = GodsCarousel;
 			sourceTree = "<group>";
@@ -228,9 +234,11 @@
 				13D35A4428060AB60033A96B /* View.swift in Sources */,
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
 				13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */,
+				13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */,
 				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
 				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
 				13D35A4928060CD70033A96B /* God.swift in Sources */,
+				13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */,
 				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
 			);
