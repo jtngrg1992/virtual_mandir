@@ -11,6 +11,15 @@
 		13D35A1E28048F160033A96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1D28048F160033A96B /* ViewController.swift */; };
 		13D35A2328048F170033A96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D35A2228048F170033A96B /* Assets.xcassets */; };
 		13D35A2628048F170033A96B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13D35A2428048F170033A96B /* LaunchScreen.storyboard */; };
+		13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4028060A8A0033A96B /* VirtualTempleView.swift */; };
+		13D35A4428060AB60033A96B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4328060AB60033A96B /* View.swift */; };
+		13D35A4628060BE00033A96B /* GodsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4528060BE00033A96B /* GodsCarousel.swift */; };
+		13D35A4928060CD70033A96B /* God.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4828060CD70033A96B /* God.swift */; };
+		13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4A28060E390033A96B /* VirtualTempleErrors.swift */; };
+		13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4D280613D00033A96B /* CollectionViewCell.swift */; };
+		13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A4F280614100033A96B /* CustomUIKitError.swift */; };
+		13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A52280616650033A96B /* GodsCarouselViewModel.swift */; };
+		13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A54280616870033A96B /* GodsCarouselCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +29,15 @@
 		13D35A2228048F170033A96B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13D35A2528048F170033A96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13D35A2728048F170033A96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13D35A4028060A8A0033A96B /* VirtualTempleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleView.swift; sourceTree = "<group>"; };
+		13D35A4328060AB60033A96B /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		13D35A4528060BE00033A96B /* GodsCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarousel.swift; sourceTree = "<group>"; };
+		13D35A4828060CD70033A96B /* God.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = God.swift; sourceTree = "<group>"; };
+		13D35A4A28060E390033A96B /* VirtualTempleErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleErrors.swift; sourceTree = "<group>"; };
+		13D35A4D280613D00033A96B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		13D35A4F280614100033A96B /* CustomUIKitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIKitError.swift; sourceTree = "<group>"; };
+		13D35A52280616650033A96B /* GodsCarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselViewModel.swift; sourceTree = "<group>"; };
+		13D35A54280616870033A96B /* GodsCarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +70,12 @@
 		13D35A1828048F160033A96B /* VirualMandir */ = {
 			isa = PBXGroup;
 			children = (
+				13D35A4C28060FD90033A96B /* extensions */,
+				13D35A4728060CCA0033A96B /* model */,
+				13D35A4228060A990033A96B /* custom-uikit */,
+				13D35A3D28060A410033A96B /* scenes */,
 				13D35A3C2805A47F0033A96B /* common-widgets */,
 				13D35A1928048F160033A96B /* AppDelegate.swift */,
-				13D35A1D28048F160033A96B /* ViewController.swift */,
 				13D35A2228048F170033A96B /* Assets.xcassets */,
 				13D35A2428048F170033A96B /* LaunchScreen.storyboard */,
 				13D35A2728048F170033A96B /* Info.plist */,
@@ -67,6 +88,68 @@
 			children = (
 			);
 			path = "common-widgets";
+			sourceTree = "<group>";
+		};
+		13D35A3D28060A410033A96B /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A3E28060A4B0033A96B /* home */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
+		13D35A3E28060A4B0033A96B /* home */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A3F28060A5E0033A96B /* virtual-temple */,
+				13D35A1D28048F160033A96B /* ViewController.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		13D35A3F28060A5E0033A96B /* virtual-temple */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A4028060A8A0033A96B /* VirtualTempleView.swift */,
+				13D35A51280616510033A96B /* GodsCarousel */,
+				13D35A4A28060E390033A96B /* VirtualTempleErrors.swift */,
+			);
+			path = "virtual-temple";
+			sourceTree = "<group>";
+		};
+		13D35A4228060A990033A96B /* custom-uikit */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A4328060AB60033A96B /* View.swift */,
+				13D35A4828060CD70033A96B /* God.swift */,
+				13D35A4D280613D00033A96B /* CollectionViewCell.swift */,
+				13D35A4F280614100033A96B /* CustomUIKitError.swift */,
+			);
+			path = "custom-uikit";
+			sourceTree = "<group>";
+		};
+		13D35A4728060CCA0033A96B /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		13D35A4C28060FD90033A96B /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		13D35A51280616510033A96B /* GodsCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A4528060BE00033A96B /* GodsCarousel.swift */,
+				13D35A52280616650033A96B /* GodsCarouselViewModel.swift */,
+				13D35A54280616870033A96B /* GodsCarouselCollectionViewCell.swift */,
+			);
+			path = GodsCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13D35A4628060BE00033A96B /* GodsCarousel.swift in Sources */,
+				13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */,
+				13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */,
+				13D35A4428060AB60033A96B /* View.swift in Sources */,
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
+				13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */,
+				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
+				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
+				13D35A4928060CD70033A96B /* God.swift in Sources */,
+				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -264,7 +356,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,6 +378,7 @@
 				INFOPLIST_FILE = VirualMandir/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,7 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,6 +406,7 @@
 				INFOPLIST_FILE = VirualMandir/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

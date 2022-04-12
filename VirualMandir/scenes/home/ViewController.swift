@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .red
+        
+        let test = VirtualTempleView(frame: .zero)
     }
 
 
