@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
 		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
+		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
+		13693C4128069C7100F71783 /* VirtualTempleViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C4028069C7100F71783 /* VirtualTempleViewBuilder.swift */; };
+		1381BD542806FFBD0008400E /* CurtainArchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1381BD532806FFBD0008400E /* CurtainArchView.swift */; };
 		13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1928048F160033A96B /* AppDelegate.swift */; };
 		13D35A1E28048F160033A96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1D28048F160033A96B /* ViewController.swift */; };
 		13D35A2328048F170033A96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D35A2228048F170033A96B /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
+		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
+		13693C4028069C7100F71783 /* VirtualTempleViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewBuilder.swift; sourceTree = "<group>"; };
+		1381BD532806FFBD0008400E /* CurtainArchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainArchView.swift; sourceTree = "<group>"; };
 		13D35A1628048F160033A96B /* VirtualMandir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualMandir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D35A1928048F160033A96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D35A1D28048F160033A96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13693C3B28068C4000F71783 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				1381BD522806FFA80008400E /* Layer1 */,
+				13693C3C28068C4A00F71783 /* Layer0 */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		13693C3C28068C4A00F71783 /* Layer0 */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A51280616510033A96B /* GodsCarousel */,
+			);
+			path = Layer0;
+			sourceTree = "<group>";
+		};
+		13693C3D28068EDD00F71783 /* VirtualTempleView */ = {
+			isa = PBXGroup;
+			children = (
+				13D35A4028060A8A0033A96B /* VirtualTempleView.swift */,
+				13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */,
+				13693C4028069C7100F71783 /* VirtualTempleViewBuilder.swift */,
+			);
+			path = VirtualTempleView;
+			sourceTree = "<group>";
+		};
+		1381BD522806FFA80008400E /* Layer1 */ = {
+			isa = PBXGroup;
+			children = (
+				1381BD532806FFBD0008400E /* CurtainArchView.swift */,
+			);
+			path = Layer1;
+			sourceTree = "<group>";
+		};
 		13D35A0D28048F160033A96B = {
 			isa = PBXGroup;
 			children = (
@@ -114,8 +155,8 @@
 		13D35A3F28060A5E0033A96B /* virtual-temple */ = {
 			isa = PBXGroup;
 			children = (
-				13D35A4028060A8A0033A96B /* VirtualTempleView.swift */,
-				13D35A51280616510033A96B /* GodsCarousel */,
+				13693C3B28068C4000F71783 /* Layers */,
+				13693C3D28068EDD00F71783 /* VirtualTempleView */,
 				13D35A4A28060E390033A96B /* VirtualTempleErrors.swift */,
 			);
 			path = "virtual-temple";
@@ -232,15 +273,18 @@
 				13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */,
 				13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */,
 				13D35A4428060AB60033A96B /* View.swift in Sources */,
+				13693C4128069C7100F71783 /* VirtualTempleViewBuilder.swift in Sources */,
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
 				13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */,
 				13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */,
 				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
 				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
+				13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */,
 				13D35A4928060CD70033A96B /* God.swift in Sources */,
 				13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */,
 				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
+				1381BD542806FFBD0008400E /* CurtainArchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

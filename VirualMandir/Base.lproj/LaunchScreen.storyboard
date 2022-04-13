@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,36 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hanuman.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="MQV-AL-Ol7">
-                                <rect key="frame" x="28" y="321" width="358" height="294"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hanuman" translatesAutoresizingMaskIntoConstraints="NO" id="zeZ-ed-vXp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="curtain.png" translatesAutoresizingMaskIntoConstraints="NO" id="hm5-zI-C2c">
-                                <rect key="frame" x="28" y="345" width="212" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="curtain.png" translatesAutoresizingMaskIntoConstraints="NO" id="rtg-Gm-iFU" userLabel="curtain_right.png">
-                                <rect key="frame" x="192" y="345" width="212" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="curtain_arch.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-TR-xzd">
-                                <rect key="frame" x="20" y="321" width="374" height="294"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="curtain_arch" translatesAutoresizingMaskIntoConstraints="NO" id="sbu-Vv-POm">
+                                <rect key="frame" x="-8" y="44" width="430" height="340"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="WRo-mj-Ycv"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="sbu-Vv-POm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="IpZ-06-Mj3"/>
+                            <constraint firstItem="sbu-Vv-POm" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-8" id="h6k-DG-rTD"/>
+                            <constraint firstAttribute="trailing" secondItem="sbu-Vv-POm" secondAttribute="trailing" constant="-8" id="wxW-gb-saP"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="162"/>
+            <point key="canvasLocation" x="50.724637681159422" y="161.38392857142856"/>
         </scene>
     </scenes>
     <resources>
-        <image name="curtain.png" width="700" height="839"/>
-        <image name="curtain_arch.png" width="4964" height="3901"/>
-        <image name="hanuman.jpeg" width="620" height="390"/>
+        <image name="curtain_arch" width="1654.5" height="1300.5"/>
+        <image name="hanuman" width="200" height="266.5"/>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
