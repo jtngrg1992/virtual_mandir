@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CurtainArchViewing: View {}
+protocol CurtainArchViewing: VirtualMandirLayer {}
 
 class CurtainArchView: View, CurtainArchViewing {
     private var archImageView: UIImageView = {
@@ -35,5 +35,15 @@ class CurtainArchView: View, CurtainArchViewing {
         let aspectRatio: CGFloat = 1.27
         let height = archImageWidth/aspectRatio
         return height
+    }
+}
+
+extension CurtainArchView {
+    func layoutYourselfOutInContainer() {
+        guard let superview = superview else {
+            return
+        }
+        superview.pinTopEdge(self, considerSafeArea: false)
+        superview.pinHorizontally(self)
     }
 }

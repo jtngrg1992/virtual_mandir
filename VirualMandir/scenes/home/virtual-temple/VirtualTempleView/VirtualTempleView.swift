@@ -7,11 +7,15 @@
 
 import UIKit
 
+protocol VirtualMandirLayer: View {
+    func layoutYourselfOutInContainer()
+}
 
 protocol VirtualTempleViewing: View {
     var viewModel: VirtualTempleViewModeling? { get set }
     func setupLayerZero()
     func setupLayerOne()
+    func getLayers() -> [VirtualMandirLayer]
 }
 
 class VirtualTempleView: View, VirtualTempleViewing {
@@ -27,6 +31,8 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
+    
+    
     var viewModel: VirtualTempleViewModeling? {
         didSet {
             godsCarousel.setGods(viewModel?.gods ?? [])
@@ -39,8 +45,17 @@ class VirtualTempleView: View, VirtualTempleViewing {
     }
     
     override func setup() {
-        setupLayerZero()
-        setupLayerOne()
+        getLayers().forEach {
+            addSubview($0)
+            $0.layoutYourselfOutInContainer()
+        }
+    }
+    
+    internal func getLayers() -> [VirtualMandirLayer] {
+        return [
+            godsCarousel,
+            curtainArchView
+        ]
     }
     
     func setupLayerZero() {

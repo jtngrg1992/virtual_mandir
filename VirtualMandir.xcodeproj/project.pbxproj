@@ -64,18 +64,10 @@
 		13693C3B28068C4000F71783 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
-				1381BD522806FFA80008400E /* Layer1 */,
-				13693C3C28068C4A00F71783 /* Layer0 */,
-			);
-			path = Layers;
-			sourceTree = "<group>";
-		};
-		13693C3C28068C4A00F71783 /* Layer0 */ = {
-			isa = PBXGroup;
-			children = (
+				1381BD5828070F770008400E /* CurtainArch */,
 				13D35A51280616510033A96B /* GodsCarousel */,
 			);
-			path = Layer0;
+			path = Layers;
 			sourceTree = "<group>";
 		};
 		13693C3D28068EDD00F71783 /* VirtualTempleView */ = {
@@ -88,12 +80,12 @@
 			path = VirtualTempleView;
 			sourceTree = "<group>";
 		};
-		1381BD522806FFA80008400E /* Layer1 */ = {
+		1381BD5828070F770008400E /* CurtainArch */ = {
 			isa = PBXGroup;
 			children = (
 				1381BD532806FFBD0008400E /* CurtainArchView.swift */,
 			);
-			path = Layer1;
+			path = CurtainArch;
 			sourceTree = "<group>";
 		};
 		13D35A0D28048F160033A96B = {

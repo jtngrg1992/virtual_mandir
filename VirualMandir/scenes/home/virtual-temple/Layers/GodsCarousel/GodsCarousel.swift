@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol GodsCarouselViewing: View, GodsCarouselViewModelDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+protocol GodsCarouselViewing: GodsCarouselViewModelDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, VirtualMandirLayer {
     var viewModel: GodsCarouselViewModeling? { get set }
     
     func setGods(_ gods: [God])
@@ -91,5 +91,12 @@ extension GodsCarouselView {
         }
         
         return cell
+    }
+}
+
+extension GodsCarouselView {
+    func layoutYourselfOutInContainer() {
+        superview?.pinVertically(self)
+        superview?.pinHorizontally(self)
     }
 }
