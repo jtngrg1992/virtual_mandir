@@ -19,15 +19,15 @@ extension UIView {
         view.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    func pinTopEdge(_ view: UIView, considerSafeArea: Bool) {
+    func pinTopEdge(_ view: UIView, considerSafeArea: Bool, constant: CGFloat = 0) {
         (considerSafeArea ? safeAreaLayoutGuide.topAnchor : topAnchor)
-            .constraint(equalTo: view.topAnchor)
+            .constraint(equalTo: view.topAnchor, constant: constant)
             .isActive = true
     }
     
-    func pinBottomEdge(_ view: UIView, considerSafeArea: Bool) {
+    func pinBottomEdge(_ view: UIView, considerSafeArea: Bool, constant: CGFloat = 0) {
         (considerSafeArea ? safeAreaLayoutGuide.bottomAnchor : bottomAnchor)
-            .constraint(equalTo: view.bottomAnchor)
+            .constraint(equalTo: view.bottomAnchor, constant: constant)
             .isActive = true
     }
     
@@ -45,5 +45,25 @@ extension UIView {
     
     func constraintHeight(to height: CGFloat) {
         heightAnchor.constraint(equalToConstant: height).isActive = true
+    }
+    
+    func setAnchorPoint(_ point: CGPoint) {
+        var newPoint: CGPoint = CGPoint(x: bounds.size.width * point.x,
+                                        y: bounds.size.height * point.y)
+        var oldPoint: CGPoint = CGPoint(x: bounds.size.width * layer.anchorPoint.x, y: bounds.size.height * layer.anchorPoint.y)
+        
+        newPoint = newPoint.applying(transform)
+        oldPoint = oldPoint.applying(transform)
+        
+        var position = layer.position
+        
+        position.x -= oldPoint.x
+        position.x += newPoint.x
+        
+        position.y -= oldPoint.y
+        position.y += newPoint.y
+        
+        layer.position = position
+        layer.anchorPoint = point
     }
 }

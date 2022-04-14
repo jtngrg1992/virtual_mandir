@@ -12,6 +12,9 @@
 		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
 		13693C4128069C7100F71783 /* VirtualTempleViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C4028069C7100F71783 /* VirtualTempleViewBuilder.swift */; };
 		1381BD542806FFBD0008400E /* CurtainArchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1381BD532806FFBD0008400E /* CurtainArchView.swift */; };
+		1381BD5B28070FF20008400E /* AnimatingBellsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1381BD5A28070FF20008400E /* AnimatingBellsView.swift */; };
+		1381BD5D28083D0C0008400E /* AnimatedBell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1381BD5C28083D0C0008400E /* AnimatedBell.swift */; };
+		1381BD5F280850A50008400E /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1381BD5E280850A50008400E /* Oscillator.swift */; };
 		13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1928048F160033A96B /* AppDelegate.swift */; };
 		13D35A1E28048F160033A96B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D35A1D28048F160033A96B /* ViewController.swift */; };
 		13D35A2328048F170033A96B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13D35A2228048F170033A96B /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
 		13693C4028069C7100F71783 /* VirtualTempleViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewBuilder.swift; sourceTree = "<group>"; };
 		1381BD532806FFBD0008400E /* CurtainArchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurtainArchView.swift; sourceTree = "<group>"; };
+		1381BD5A28070FF20008400E /* AnimatingBellsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingBellsView.swift; sourceTree = "<group>"; };
+		1381BD5C28083D0C0008400E /* AnimatedBell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBell.swift; sourceTree = "<group>"; };
+		1381BD5E280850A50008400E /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		13D35A1628048F160033A96B /* VirtualMandir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualMandir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13D35A1928048F160033A96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13D35A1D28048F160033A96B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +70,7 @@
 		13693C3B28068C4000F71783 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				1381BD5928070FDF0008400E /* AnimatingBells */,
 				1381BD5828070F770008400E /* CurtainArch */,
 				13D35A51280616510033A96B /* GodsCarousel */,
 			);
@@ -86,6 +93,16 @@
 				1381BD532806FFBD0008400E /* CurtainArchView.swift */,
 			);
 			path = CurtainArch;
+			sourceTree = "<group>";
+		};
+		1381BD5928070FDF0008400E /* AnimatingBells */ = {
+			isa = PBXGroup;
+			children = (
+				1381BD5A28070FF20008400E /* AnimatingBellsView.swift */,
+				1381BD5C28083D0C0008400E /* AnimatedBell.swift */,
+				1381BD5E280850A50008400E /* Oscillator.swift */,
+			);
+			path = AnimatingBells;
 			sourceTree = "<group>";
 		};
 		13D35A0D28048F160033A96B = {
@@ -269,8 +286,11 @@
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
 				13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */,
 				13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */,
+				1381BD5B28070FF20008400E /* AnimatingBellsView.swift in Sources */,
+				1381BD5F280850A50008400E /* Oscillator.swift in Sources */,
 				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
 				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
+				1381BD5D28083D0C0008400E /* AnimatedBell.swift in Sources */,
 				13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */,
 				13D35A4928060CD70033A96B /* God.swift in Sources */,
 				13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */,

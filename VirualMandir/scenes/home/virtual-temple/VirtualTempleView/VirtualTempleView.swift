@@ -13,8 +13,6 @@ protocol VirtualMandirLayer: View {
 
 protocol VirtualTempleViewing: View {
     var viewModel: VirtualTempleViewModeling? { get set }
-    func setupLayerZero()
-    func setupLayerOne()
     func getLayers() -> [VirtualMandirLayer]
 }
 
@@ -27,6 +25,12 @@ class VirtualTempleView: View, VirtualTempleViewing {
     
     private var curtainArchView: CurtainArchViewing = {
         let view: CurtainArchViewing = CurtainArchView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private var animatingBellsView: AnimatingBellsViewing = {
+        let view: AnimatingBellsViewing = AnimatingBellsView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -54,19 +58,8 @@ class VirtualTempleView: View, VirtualTempleViewing {
     internal func getLayers() -> [VirtualMandirLayer] {
         return [
             godsCarousel,
+            animatingBellsView,
             curtainArchView
         ]
-    }
-    
-    func setupLayerZero() {
-        addSubview(godsCarousel)
-        pinVertically(godsCarousel)
-        pinHorizontally(godsCarousel)
-    }
-    
-    func setupLayerOne() {
-        addSubview(curtainArchView)
-        pinTopEdge(curtainArchView, considerSafeArea: false)
-        pinHorizontally(curtainArchView)
     }
 }
