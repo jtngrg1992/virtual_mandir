@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		135E22F128096DCB00F5C144 /* FlowerEmitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E22F028096DCB00F5C144 /* FlowerEmitterLayer.swift */; };
+		135E22F3280975FB00F5C144 /* FlowerFallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E22F2280975FB00F5C144 /* FlowerFallView.swift */; };
+		135E22F528097B8300F5C144 /* FallingFlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E22F428097B8300F5C144 /* FallingFlower.swift */; };
 		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
 		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
 		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		135E22F028096DCB00F5C144 /* FlowerEmitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerEmitterLayer.swift; sourceTree = "<group>"; };
+		135E22F2280975FB00F5C144 /* FlowerFallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerFallView.swift; sourceTree = "<group>"; };
+		135E22F428097B8300F5C144 /* FallingFlower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingFlower.swift; sourceTree = "<group>"; };
 		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
 		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
@@ -67,9 +73,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		135E22EE28096DA200F5C144 /* FlowerFall */ = {
+			isa = PBXGroup;
+			children = (
+				135E22F028096DCB00F5C144 /* FlowerEmitterLayer.swift */,
+				135E22F2280975FB00F5C144 /* FlowerFallView.swift */,
+				135E22F428097B8300F5C144 /* FallingFlower.swift */,
+			);
+			path = FlowerFall;
+			sourceTree = "<group>";
+		};
 		13693C3B28068C4000F71783 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				135E22EE28096DA200F5C144 /* FlowerFall */,
 				1381BD5928070FDF0008400E /* AnimatingBells */,
 				1381BD5828070F770008400E /* CurtainArch */,
 				13D35A51280616510033A96B /* GodsCarousel */,
@@ -281,12 +298,14 @@
 				13D35A4628060BE00033A96B /* GodsCarousel.swift in Sources */,
 				13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */,
 				13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */,
+				135E22F3280975FB00F5C144 /* FlowerFallView.swift in Sources */,
 				13D35A4428060AB60033A96B /* View.swift in Sources */,
 				13693C4128069C7100F71783 /* VirtualTempleViewBuilder.swift in Sources */,
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
 				13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */,
 				13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */,
 				1381BD5B28070FF20008400E /* AnimatingBellsView.swift in Sources */,
+				135E22F128096DCB00F5C144 /* FlowerEmitterLayer.swift in Sources */,
 				1381BD5F280850A50008400E /* Oscillator.swift in Sources */,
 				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
 				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
@@ -296,6 +315,7 @@
 				13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */,
 				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
+				135E22F528097B8300F5C144 /* FallingFlower.swift in Sources */,
 				1381BD542806FFBD0008400E /* CurtainArchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

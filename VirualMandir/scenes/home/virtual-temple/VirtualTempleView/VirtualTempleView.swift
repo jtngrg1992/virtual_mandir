@@ -35,6 +35,11 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
+    private var fallingFlowersView: FlowerFallViewing = {
+        let view: FlowerFallViewing = FlowerFallView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     
     var viewModel: VirtualTempleViewModeling? {
@@ -59,7 +64,8 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return [
             godsCarousel,
             animatingBellsView,
-            curtainArchView
+            curtainArchView,
+            fallingFlowersView
         ]
     }
 }
