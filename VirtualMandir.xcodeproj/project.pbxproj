@@ -10,6 +10,20 @@
 		135E22F128096DCB00F5C144 /* FlowerEmitterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E22F028096DCB00F5C144 /* FlowerEmitterLayer.swift */; };
 		135E22F3280975FB00F5C144 /* FlowerFallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E22F2280975FB00F5C144 /* FlowerFallView.swift */; };
 		135E22F528097B8300F5C144 /* FallingFlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E22F428097B8300F5C144 /* FallingFlower.swift */; };
+		135E23012809880E00F5C144 /* flame_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22F82809880E00F5C144 /* flame_6.png */; };
+		135E23022809880E00F5C144 /* flame_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22F92809880E00F5C144 /* flame_2.png */; };
+		135E23032809880E00F5C144 /* flame_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22FA2809880E00F5C144 /* flame_5.png */; };
+		135E23042809880E00F5C144 /* flame_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22FB2809880E00F5C144 /* flame_1.png */; };
+		135E23052809880E00F5C144 /* flame_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22FC2809880E00F5C144 /* flame_8.png */; };
+		135E23062809880E00F5C144 /* flame_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22FD2809880E00F5C144 /* flame_3.png */; };
+		135E23072809880E00F5C144 /* flame_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22FE2809880E00F5C144 /* flame_9.png */; };
+		135E23082809880E00F5C144 /* flame_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E22FF2809880E00F5C144 /* flame_4.png */; };
+		135E23092809880E00F5C144 /* flame_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 135E23002809880E00F5C144 /* flame_7.png */; };
+		135E230B2809884000F5C144 /* AnimatedFlame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E230A2809884000F5C144 /* AnimatedFlame.swift */; };
+		135E230D28098AB700F5C144 /* AnimatedFlameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E230C28098AB700F5C144 /* AnimatedFlameViewModel.swift */; };
+		135E230F28098C1100F5C144 /* AnimatedFlameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E230E28098C1100F5C144 /* AnimatedFlameBuilder.swift */; };
+		135E231228098CB100F5C144 /* AnimatedDiyaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E231128098CB100F5C144 /* AnimatedDiyaView.swift */; };
+		135E2314280994B000F5C144 /* AnimatedDiya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E2313280994B000F5C144 /* AnimatedDiya.swift */; };
 		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
 		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
 		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
@@ -37,6 +51,20 @@
 		135E22F028096DCB00F5C144 /* FlowerEmitterLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerEmitterLayer.swift; sourceTree = "<group>"; };
 		135E22F2280975FB00F5C144 /* FlowerFallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerFallView.swift; sourceTree = "<group>"; };
 		135E22F428097B8300F5C144 /* FallingFlower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallingFlower.swift; sourceTree = "<group>"; };
+		135E22F82809880E00F5C144 /* flame_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_6.png; sourceTree = "<group>"; };
+		135E22F92809880E00F5C144 /* flame_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_2.png; sourceTree = "<group>"; };
+		135E22FA2809880E00F5C144 /* flame_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_5.png; sourceTree = "<group>"; };
+		135E22FB2809880E00F5C144 /* flame_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_1.png; sourceTree = "<group>"; };
+		135E22FC2809880E00F5C144 /* flame_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_8.png; sourceTree = "<group>"; };
+		135E22FD2809880E00F5C144 /* flame_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_3.png; sourceTree = "<group>"; };
+		135E22FE2809880E00F5C144 /* flame_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_9.png; sourceTree = "<group>"; };
+		135E22FF2809880E00F5C144 /* flame_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_4.png; sourceTree = "<group>"; };
+		135E23002809880E00F5C144 /* flame_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame_7.png; sourceTree = "<group>"; };
+		135E230A2809884000F5C144 /* AnimatedFlame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedFlame.swift; sourceTree = "<group>"; };
+		135E230C28098AB700F5C144 /* AnimatedFlameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedFlameViewModel.swift; sourceTree = "<group>"; };
+		135E230E28098C1100F5C144 /* AnimatedFlameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedFlameBuilder.swift; sourceTree = "<group>"; };
+		135E231128098CB100F5C144 /* AnimatedDiyaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedDiyaView.swift; sourceTree = "<group>"; };
+		135E2313280994B000F5C144 /* AnimatedDiya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedDiya.swift; sourceTree = "<group>"; };
 		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
 		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
@@ -83,9 +111,47 @@
 			path = FlowerFall;
 			sourceTree = "<group>";
 		};
+		135E22F6280987DD00F5C144 /* AnimatedDiya */ = {
+			isa = PBXGroup;
+			children = (
+				135E231028098C8A00F5C144 /* AnimatedFlame */,
+				135E231128098CB100F5C144 /* AnimatedDiyaView.swift */,
+				135E2313280994B000F5C144 /* AnimatedDiya.swift */,
+			);
+			path = AnimatedDiya;
+			sourceTree = "<group>";
+		};
+		135E22F7280987F000F5C144 /* flame-frames */ = {
+			isa = PBXGroup;
+			children = (
+				135E22FB2809880E00F5C144 /* flame_1.png */,
+				135E22F92809880E00F5C144 /* flame_2.png */,
+				135E22FD2809880E00F5C144 /* flame_3.png */,
+				135E22FF2809880E00F5C144 /* flame_4.png */,
+				135E22FA2809880E00F5C144 /* flame_5.png */,
+				135E22F82809880E00F5C144 /* flame_6.png */,
+				135E23002809880E00F5C144 /* flame_7.png */,
+				135E22FC2809880E00F5C144 /* flame_8.png */,
+				135E22FE2809880E00F5C144 /* flame_9.png */,
+			);
+			path = "flame-frames";
+			sourceTree = "<group>";
+		};
+		135E231028098C8A00F5C144 /* AnimatedFlame */ = {
+			isa = PBXGroup;
+			children = (
+				135E22F7280987F000F5C144 /* flame-frames */,
+				135E230A2809884000F5C144 /* AnimatedFlame.swift */,
+				135E230E28098C1100F5C144 /* AnimatedFlameBuilder.swift */,
+				135E230C28098AB700F5C144 /* AnimatedFlameViewModel.swift */,
+			);
+			path = AnimatedFlame;
+			sourceTree = "<group>";
+		};
 		13693C3B28068C4000F71783 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				135E22F6280987DD00F5C144 /* AnimatedDiya */,
 				135E22EE28096DA200F5C144 /* FlowerFall */,
 				1381BD5928070FDF0008400E /* AnimatingBells */,
 				1381BD5828070F770008400E /* CurtainArch */,
@@ -283,8 +349,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135E23082809880E00F5C144 /* flame_4.png in Resources */,
+				135E23052809880E00F5C144 /* flame_8.png in Resources */,
+				135E23092809880E00F5C144 /* flame_7.png in Resources */,
+				135E23022809880E00F5C144 /* flame_2.png in Resources */,
+				135E23012809880E00F5C144 /* flame_6.png in Resources */,
+				135E23072809880E00F5C144 /* flame_9.png in Resources */,
 				13D35A2628048F170033A96B /* LaunchScreen.storyboard in Resources */,
+				135E23042809880E00F5C144 /* flame_1.png in Resources */,
+				135E23062809880E00F5C144 /* flame_3.png in Resources */,
 				13D35A2328048F170033A96B /* Assets.xcassets in Resources */,
+				135E23032809880E00F5C144 /* flame_5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,10 +370,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135E230F28098C1100F5C144 /* AnimatedFlameBuilder.swift in Sources */,
 				13D35A4628060BE00033A96B /* GodsCarousel.swift in Sources */,
 				13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */,
 				13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */,
+				135E230D28098AB700F5C144 /* AnimatedFlameViewModel.swift in Sources */,
 				135E22F3280975FB00F5C144 /* FlowerFallView.swift in Sources */,
+				135E231228098CB100F5C144 /* AnimatedDiyaView.swift in Sources */,
+				135E230B2809884000F5C144 /* AnimatedFlame.swift in Sources */,
 				13D35A4428060AB60033A96B /* View.swift in Sources */,
 				13693C4128069C7100F71783 /* VirtualTempleViewBuilder.swift in Sources */,
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
@@ -316,6 +395,7 @@
 				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
 				135E22F528097B8300F5C144 /* FallingFlower.swift in Sources */,
+				135E2314280994B000F5C144 /* AnimatedDiya.swift in Sources */,
 				1381BD542806FFBD0008400E /* CurtainArchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

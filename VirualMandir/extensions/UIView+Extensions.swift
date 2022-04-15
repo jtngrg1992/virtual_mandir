@@ -66,4 +66,18 @@ extension UIView {
         layer.position = position
         layer.anchorPoint = point
     }
+    
+    func centerHorizontallyInContainer(_ offset: CGFloat = 0) {
+        guard let superview = superview else {
+            return
+        }
+        centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: offset).isActive = true
+    }
+    
+    func centerVerticallyInContainer() {
+        guard let superview = superview else {
+            return
+        }
+        centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
+    }
 }

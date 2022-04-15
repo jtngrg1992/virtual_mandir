@@ -1,0 +1,39 @@
+//
+//  AnimatedDiyaView.swift
+//  VirtualMandir
+//
+//  Created by Jatin Garg on 15/04/22.
+//
+
+import UIKit
+
+protocol AnimatedDiyaViewing: VirtualMandirLayer {
+    func startAnimating()
+}
+
+class AnimatedDiyaView: View, AnimatedDiyaViewing {
+    
+    private var diyaView: AnimatedDiya = {
+        let v = AnimatedDiya()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
+    override func setup() {
+        addSubview(diyaView)
+        pinBottomEdge(diyaView, considerSafeArea: true, constant: 50)
+        diyaView.centerHorizontallyInContainer(20)
+    }
+}
+
+extension AnimatedDiyaView {
+    public func layoutYourselfOutInContainer() {
+        superview?.pinHorizontally(self)
+        superview?.pinBottomEdge(self, considerSafeArea: true)
+        constraintHeight(to: 200)
+    }
+    
+    public func startAnimating() {
+        diyaView.lightUp()
+    }
+}

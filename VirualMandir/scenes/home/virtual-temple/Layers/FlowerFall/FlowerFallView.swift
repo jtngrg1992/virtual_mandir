@@ -19,6 +19,7 @@ class FlowerFallView: View, FlowerFallViewing {
     
     override func setup() {
         self.emitterLayer.addAsSublayer(to: self)
+        isUserInteractionEnabled = false
     }
     
     override func layoutSubviews() {

@@ -41,6 +41,12 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
+    private var animatedDiyaView: AnimatedDiyaViewing = {
+        let view = AnimatedDiyaView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     var viewModel: VirtualTempleViewModeling? {
         didSet {
@@ -65,7 +71,8 @@ class VirtualTempleView: View, VirtualTempleViewing {
             godsCarousel,
             animatingBellsView,
             curtainArchView,
-            fallingFlowersView
+            fallingFlowersView,
+            animatedDiyaView
         ]
     }
 }
