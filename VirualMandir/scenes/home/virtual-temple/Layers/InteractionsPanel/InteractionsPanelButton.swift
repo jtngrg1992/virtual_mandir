@@ -8,10 +8,13 @@
 import UIKit
 
 protocol InteractionsPanelButtonInterface: InteractiveButton {
+    var interaction: MandirInteraction! { get set }
     func setContent(title: String?, image: UIImage?)
 }
 
 class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterface {
+    var interaction: MandirInteraction!
+    
     private var imageView: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
@@ -23,7 +26,7 @@ class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterfa
         let lable = UILabel()
         lable.lineBreakMode = .byWordWrapping
         lable.numberOfLines = 2
-        lable.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        lable.font = UIFont.systemFont(ofSize: 11, weight: .medium)
         lable.textColor = .white
         return lable
     }()
@@ -37,6 +40,7 @@ class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterfa
     }()
     
     private var imageWidthConstraint: NSLayoutConstraint!
+    private var imageHeightConstriant: NSLayoutConstraint!
     
     override func setup() {
         super.setup()
@@ -52,13 +56,17 @@ class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterfa
         imageWidthConstraint = imageView.widthAnchor.constraint(equalToConstant: 0)
         imageWidthConstraint.isActive = true
         
+        imageHeightConstriant = imageView.heightAnchor.constraint(equalToConstant: 0)
+        imageHeightConstriant.isActive = true
+        
         backgroundColor = .black.withAlphaComponent(0.5)
         
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        imageWidthConstraint.constant = bounds.width * 0.6
+        imageWidthConstraint.constant = bounds.width * 0.5
+        imageHeightConstriant.constant = bounds.width * 0.5
     }
     
     public func setContent(title: String?, image: UIImage?) {

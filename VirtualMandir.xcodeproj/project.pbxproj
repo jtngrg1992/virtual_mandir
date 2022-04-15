@@ -27,6 +27,11 @@
 		135E23172809A43F00F5C144 /* InteractionsPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23162809A43F00F5C144 /* InteractionsPanelView.swift */; };
 		135E23192809A4A000F5C144 /* InteractiveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23182809A4A000F5C144 /* InteractiveButton.swift */; };
 		135E231B2809A80D00F5C144 /* InteractionsPanelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E231A2809A80D00F5C144 /* InteractionsPanelButton.swift */; };
+		135E231E2809CCA700F5C144 /* SystemLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E231D2809CCA700F5C144 /* SystemLanguage.swift */; };
+		135E23202809CCC200F5C144 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E231F2809CCC200F5C144 /* Strings.swift */; };
+		135E23232809CFD300F5C144 /* InteractionsPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23222809CFD300F5C144 /* InteractionsPanelViewModel.swift */; };
+		135E23252809D1AA00F5C144 /* InteractionsPanelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23242809D1AA00F5C144 /* InteractionsPanelBuilder.swift */; };
+		135E23272809DA0800F5C144 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23262809DA0700F5C144 /* Array+Extensions.swift */; };
 		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
 		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
 		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
@@ -71,6 +76,11 @@
 		135E23162809A43F00F5C144 /* InteractionsPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsPanelView.swift; sourceTree = "<group>"; };
 		135E23182809A4A000F5C144 /* InteractiveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveButton.swift; sourceTree = "<group>"; };
 		135E231A2809A80D00F5C144 /* InteractionsPanelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsPanelButton.swift; sourceTree = "<group>"; };
+		135E231D2809CCA700F5C144 /* SystemLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemLanguage.swift; sourceTree = "<group>"; };
+		135E231F2809CCC200F5C144 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		135E23222809CFD300F5C144 /* InteractionsPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsPanelViewModel.swift; sourceTree = "<group>"; };
+		135E23242809D1AA00F5C144 /* InteractionsPanelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsPanelBuilder.swift; sourceTree = "<group>"; };
+		135E23262809DA0700F5C144 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
 		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
@@ -159,8 +169,19 @@
 			children = (
 				135E23162809A43F00F5C144 /* InteractionsPanelView.swift */,
 				135E231A2809A80D00F5C144 /* InteractionsPanelButton.swift */,
+				135E23222809CFD300F5C144 /* InteractionsPanelViewModel.swift */,
+				135E23242809D1AA00F5C144 /* InteractionsPanelBuilder.swift */,
 			);
 			path = InteractionsPanel;
+			sourceTree = "<group>";
+		};
+		135E231C2809CC9000F5C144 /* language */ = {
+			isa = PBXGroup;
+			children = (
+				135E231D2809CCA700F5C144 /* SystemLanguage.swift */,
+				135E231F2809CCC200F5C144 /* Strings.swift */,
+			);
+			path = language;
 			sourceTree = "<group>";
 		};
 		13693C3B28068C4000F71783 /* Layers */ = {
@@ -223,6 +244,7 @@
 		13D35A1828048F160033A96B /* VirualMandir */ = {
 			isa = PBXGroup;
 			children = (
+				135E231C2809CC9000F5C144 /* language */,
 				13D35A4C28060FD90033A96B /* extensions */,
 				13D35A4728060CCA0033A96B /* model */,
 				13D35A4228060A990033A96B /* custom-uikit */,
@@ -293,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				13693C37280618E800F71783 /* UIView+Extensions.swift */,
+				135E23262809DA0700F5C144 /* Array+Extensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -393,6 +416,7 @@
 				13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */,
 				13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */,
 				135E230D28098AB700F5C144 /* AnimatedFlameViewModel.swift in Sources */,
+				135E231E2809CCA700F5C144 /* SystemLanguage.swift in Sources */,
 				135E23192809A4A000F5C144 /* InteractiveButton.swift in Sources */,
 				135E22F3280975FB00F5C144 /* FlowerFallView.swift in Sources */,
 				135E231228098CB100F5C144 /* AnimatedDiyaView.swift in Sources */,
@@ -404,16 +428,20 @@
 				13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */,
 				1381BD5B28070FF20008400E /* AnimatingBellsView.swift in Sources */,
 				135E22F128096DCB00F5C144 /* FlowerEmitterLayer.swift in Sources */,
+				135E23202809CCC200F5C144 /* Strings.swift in Sources */,
 				1381BD5F280850A50008400E /* Oscillator.swift in Sources */,
+				135E23232809CFD300F5C144 /* InteractionsPanelViewModel.swift in Sources */,
 				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
 				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
 				1381BD5D28083D0C0008400E /* AnimatedBell.swift in Sources */,
 				13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */,
+				135E23252809D1AA00F5C144 /* InteractionsPanelBuilder.swift in Sources */,
 				13D35A4928060CD70033A96B /* God.swift in Sources */,
 				13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */,
 				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
 				135E23172809A43F00F5C144 /* InteractionsPanelView.swift in Sources */,
+				135E23272809DA0800F5C144 /* Array+Extensions.swift in Sources */,
 				135E22F528097B8300F5C144 /* FallingFlower.swift in Sources */,
 				135E2314280994B000F5C144 /* AnimatedDiya.swift in Sources */,
 				1381BD542806FFBD0008400E /* CurtainArchView.swift in Sources */,

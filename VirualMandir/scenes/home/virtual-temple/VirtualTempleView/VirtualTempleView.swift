@@ -47,6 +47,12 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
+    private var interactionsPanelView: InteractionsPanelViewing = {
+        let view = InteractionsPanelBuilder.build(withInteractions: [.playShankh,.ringBell,.offerFlowers, .lightDiya])
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     
     var viewModel: VirtualTempleViewModeling? {
         didSet {
@@ -72,7 +78,8 @@ class VirtualTempleView: View, VirtualTempleViewing {
             animatingBellsView,
             curtainArchView,
             fallingFlowersView,
-            animatedDiyaView
+            animatedDiyaView,
+            interactionsPanelView
         ]
     }
 }
