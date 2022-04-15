@@ -23,6 +23,7 @@ class AnimatedDiyaView: View, AnimatedDiyaViewing {
         addSubview(diyaView)
         pinBottomEdge(diyaView, considerSafeArea: true, constant: 50)
         diyaView.centerHorizontallyInContainer(20)
+        isUserInteractionEnabled = false
     }
 }
 
