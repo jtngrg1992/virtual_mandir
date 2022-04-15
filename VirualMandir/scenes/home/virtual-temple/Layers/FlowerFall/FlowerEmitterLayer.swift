@@ -50,7 +50,11 @@ class FlowerEmitterLayer: CAEmitterLayer, FlowerEmitterLaying {
             cell.lifetime = 10
             cell.emissionLongitude = CGFloat.pi
             cell.emissionRange = CGFloat.pi/3
+            cell.yAcceleration = 9.8
+            cell.spinRange = 2
+            cell.velocityRange = 10
             cells.append(cell)
+            
         }
         
         return cells
