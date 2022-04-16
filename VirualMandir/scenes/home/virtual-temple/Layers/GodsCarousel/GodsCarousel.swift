@@ -14,6 +14,7 @@ protocol GodsCarouselViewing: GodsCarouselViewModelDelegate, UICollectionViewDat
 }
 
 class GodsCarouselView: View, GodsCarouselViewing {
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = .zero

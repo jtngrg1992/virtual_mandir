@@ -8,13 +8,10 @@
 import UIKit
 
 
-protocol AnimatingBellsViewing: VirtualMandirLayer {
-    func startAnimating()
-    func stopAnimating()
-}
+protocol AnimatingBellsViewing: VirtualMandirLayer {}
 
 class AnimatingBellsView: View, AnimatingBellsViewing {
-    
+    var isAnimating: Bool = false
     private let leftBell: AnimatedBell = AnimatedBell()
     private let rightBell: AnimatedBell = AnimatedBell()
     
@@ -42,6 +39,7 @@ class AnimatingBellsView: View, AnimatingBellsViewing {
 extension AnimatingBellsView {
     public func startAnimating() {
         leftBell.startOscillating()
+        isAnimating = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.rightBell.startOscillating()
         }
@@ -50,6 +48,7 @@ extension AnimatingBellsView {
     public func stopAnimating() {
         leftBell.stopOscillating()
         rightBell.stopOscillating()
+        isAnimating = false
     }
     
     public func layoutYourselfOutInContainer() {
@@ -58,13 +57,5 @@ extension AnimatingBellsView {
         }
         superview.pinHorizontally(self)
         superview.pinTopEdge(self, considerSafeArea: true, constant: -110)
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            self.leftBell.startOscillating()
-//            
-//        }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.65) {
-//            self.rightBell.startOscillating()
-//        }
     }
 }

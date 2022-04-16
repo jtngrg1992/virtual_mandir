@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol AnimatedDiyaViewing: VirtualMandirLayer {
-    func startAnimating()
-}
+protocol AnimatedDiyaViewing: VirtualMandirLayer {}
 
 class AnimatedDiyaView: View, AnimatedDiyaViewing {
+    
+    var isAnimating: Bool = false
     
     private var diyaView: AnimatedDiya = {
         let v = AnimatedDiya()
@@ -36,5 +36,6 @@ extension AnimatedDiyaView {
     
     public func startAnimating() {
         diyaView.lightUp()
+        isAnimating = true
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 protocol CurtainArchViewing: VirtualMandirLayer {}
 
 class CurtainArchView: View, CurtainArchViewing {
+    
     private var archImageView: UIImageView = {
         let img = UIImageView(image: UIImage(named: "curtain_arch"))
         img.translatesAutoresizingMaskIntoConstraints = false

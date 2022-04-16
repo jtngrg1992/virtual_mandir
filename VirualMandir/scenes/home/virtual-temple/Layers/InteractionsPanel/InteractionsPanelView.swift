@@ -15,7 +15,6 @@ protocol InteractionsPanelViewing: VirtualMandirLayer, InteractionsPanelViewMode
 }
 
 class InteractionsPanelView: View, InteractionsPanelViewing {
-    
     var viewModel: InteractionsPanelViewModelling? {
         willSet {
             if viewModel == nil && newValue != nil {

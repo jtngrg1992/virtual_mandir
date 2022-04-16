@@ -37,6 +37,7 @@
 		135E2330280AC1F400F5C144 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E232F280AC1F400F5C144 /* AudioPlayer.swift */; };
 		135E2332280AC8B400F5C144 /* bell_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 135E2331280AC8B400F5C144 /* bell_sound.mp3 */; };
 		135E2336280AC93B00F5C144 /* InteractionAudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E2335280AC93B00F5C144 /* InteractionAudioHandler.swift */; };
+		135E233A280B0B1700F5C144 /* VirtualMandirLayerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E2339280B0B1700F5C144 /* VirtualMandirLayerAnimator.swift */; };
 		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
 		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
 		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
@@ -91,6 +92,7 @@
 		135E232F280AC1F400F5C144 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		135E2331280AC8B400F5C144 /* bell_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell_sound.mp3; sourceTree = "<group>"; };
 		135E2335280AC93B00F5C144 /* InteractionAudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionAudioHandler.swift; sourceTree = "<group>"; };
+		135E2339280B0B1700F5C144 /* VirtualMandirLayerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualMandirLayerAnimator.swift; sourceTree = "<group>"; };
 		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
 		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				135E2335280AC93B00F5C144 /* InteractionAudioHandler.swift */,
+				135E2339280B0B1700F5C144 /* VirtualMandirLayerAnimator.swift */,
 			);
 			path = "temple-services";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				135E230F28098C1100F5C144 /* AnimatedFlameBuilder.swift in Sources */,
 				135E231B2809A80D00F5C144 /* InteractionsPanelButton.swift in Sources */,
 				13D35A4628060BE00033A96B /* GodsCarousel.swift in Sources */,
+				135E233A280B0B1700F5C144 /* VirtualMandirLayerAnimator.swift in Sources */,
 				13D35A4B28060E390033A96B /* VirtualTempleErrors.swift in Sources */,
 				13D35A4E280613D00033A96B /* CollectionViewCell.swift in Sources */,
 				135E230D28098AB700F5C144 /* AnimatedFlameViewModel.swift in Sources */,

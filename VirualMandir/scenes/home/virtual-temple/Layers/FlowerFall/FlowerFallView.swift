@@ -8,12 +8,11 @@
 import UIKit
 
 
-protocol FlowerFallViewing: VirtualMandirLayer {
-    func startAnimating()
-    func stopAnimating()
-}
+protocol FlowerFallViewing: VirtualMandirLayer {}
 
 class FlowerFallView: View, FlowerFallViewing {
+    
+    var isAnimating: Bool = false
     
     private let emitterLayer: FlowerEmitterLaying = FlowerEmitterLayer()
     
@@ -30,10 +29,13 @@ class FlowerFallView: View, FlowerFallViewing {
     
     public func startAnimating() {
         emitterLayer.setBirthRate(to: 2)
+        emitterLayer.beginTime = CACurrentMediaTime() // important to prevent particales from filling the screen abdruptly
+        isAnimating = true
     }
     
     public func stopAnimating() {
         emitterLayer.setBirthRate(to: 0)
+        isAnimating = false
     }
     
     public func layoutYourselfOutInContainer() {

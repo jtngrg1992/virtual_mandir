@@ -8,7 +8,19 @@
 import UIKit
 
 protocol VirtualMandirLayer: View {
+    var isAnimating: Bool { get }
     func layoutYourselfOutInContainer()
+    func startAnimating()
+    func stopAnimating()
+}
+
+extension VirtualMandirLayer {
+    var isAnimating: Bool {
+        false
+    }
+    
+    func startAnimating() {}
+    func stopAnimating() {}
 }
 
 protocol VirtualTempleViewing: View, VirtualTempleViewModelDelegate {
@@ -29,19 +41,19 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
-    private var animatingBellsView: AnimatingBellsViewing = {
+    var animatingBellsView: AnimatingBellsViewing = {
         let view: AnimatingBellsViewing = AnimatingBellsView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var fallingFlowersView: FlowerFallViewing = {
+    var fallingFlowersView: FlowerFallViewing = {
         let view: FlowerFallViewing = FlowerFallView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    private var animatedDiyaView: AnimatedDiyaViewing = {
+    var animatedDiyaView: AnimatedDiyaViewing = {
         let view = AnimatedDiyaView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
