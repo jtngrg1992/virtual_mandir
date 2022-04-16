@@ -10,13 +10,16 @@ import UIKit
 
 protocol InteractionsPanelViewing: VirtualMandirLayer, InteractionsPanelViewModelDelegate {
     var viewModel: InteractionsPanelViewModelling? { get set }
+    func setModuleDelegate(_ moduleDelegate: InteractionsPanelModuleDelegate?)
 }
 
 class InteractionsPanelView: View, InteractionsPanelViewing {
     
     var viewModel: InteractionsPanelViewModelling? {
-        didSet {
-            viewModel?.generateInteractionButtons()
+        willSet {
+            if viewModel == nil && newValue != nil {
+                newValue?.generateInteractionButtons()
+            }
         }
     }
     
@@ -75,6 +78,10 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
             }
         }
         return result
+    }
+    
+    func setModuleDelegate(_ moduleDelegate: InteractionsPanelModuleDelegate?) {
+        viewModel?.moduleDelegate = moduleDelegate
     }
 }
 

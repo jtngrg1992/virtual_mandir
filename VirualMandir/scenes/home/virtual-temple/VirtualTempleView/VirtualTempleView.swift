@@ -47,7 +47,7 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
-    private var interactionsPanelView: InteractionsPanelViewing = {
+    private lazy var interactionsPanelView: InteractionsPanelViewing = {
         let view = InteractionsPanelBuilder.build(withInteractions: [.playShankh,.ringBell,.offerFlowers, .lightDiya])
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -57,6 +57,7 @@ class VirtualTempleView: View, VirtualTempleViewing {
     var viewModel: VirtualTempleViewModeling? {
         didSet {
             godsCarousel.setGods(viewModel?.gods ?? [])
+            interactionsPanelView.setModuleDelegate(viewModel)
         }
     }
     

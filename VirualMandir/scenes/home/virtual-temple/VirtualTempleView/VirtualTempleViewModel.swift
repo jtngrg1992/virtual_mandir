@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol VirtualTempleViewModeling {
+protocol VirtualTempleViewModeling: InteractionsPanelModuleDelegate {
     var gods: [God] { get set }
 }
 
@@ -17,5 +17,11 @@ class VirtualTempleViewModel: VirtualTempleViewModeling {
     
     init(gods: [God]) {
         self.gods = gods
+    }
+}
+
+extension VirtualTempleViewModel {
+    func interactionsPanelDidRecordInteraction(_ interaction: MandirInteraction) {
+        print(interaction)
     }
 }

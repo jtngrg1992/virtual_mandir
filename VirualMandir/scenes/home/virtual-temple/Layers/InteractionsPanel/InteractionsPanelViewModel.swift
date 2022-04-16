@@ -44,10 +44,15 @@ extension MandirInteraction {
     }
 }
 
+protocol InteractionsPanelModuleDelegate: AnyObject {
+    func interactionsPanelDidRecordInteraction(_ interaction: MandirInteraction)
+}
+
 protocol InteractionsPanelViewModelling {
     var supportedInteractions: [MandirInteraction] { get set }
     var interactionsPerSide: Int {  get }
     var delegate: InteractionsPanelViewModelDelegate? { get set }
+    var moduleDelegate: InteractionsPanelModuleDelegate? { get set }
     func generateInteractionButtons()
 }
 
@@ -70,13 +75,15 @@ class InteractionsPanelViewModel: InteractionsPanelViewModelling {
     
     weak var delegate: InteractionsPanelViewModelDelegate?
     
+    weak var moduleDelegate: InteractionsPanelModuleDelegate?
+    
     init(supportedInteractions: [MandirInteraction]) {
         self.supportedInteractions = supportedInteractions
         generateInteractionButtons()
     }
     
     @objc func handleInteractionButtonTap(_ sender: InteractionsPanelButton) {
-        
+        moduleDelegate?.interactionsPanelDidRecordInteraction(sender.interaction)
     }
     
     func generateInteractionButtons() {
