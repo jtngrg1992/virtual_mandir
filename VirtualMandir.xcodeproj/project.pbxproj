@@ -32,6 +32,11 @@
 		135E23232809CFD300F5C144 /* InteractionsPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23222809CFD300F5C144 /* InteractionsPanelViewModel.swift */; };
 		135E23252809D1AA00F5C144 /* InteractionsPanelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23242809D1AA00F5C144 /* InteractionsPanelBuilder.swift */; };
 		135E23272809DA0800F5C144 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E23262809DA0700F5C144 /* Array+Extensions.swift */; };
+		135E232B280ABF1700F5C144 /* shankh_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 135E232A280ABF1700F5C144 /* shankh_sound.mp3 */; };
+		135E232D280ABF6200F5C144 /* AudioFX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E232C280ABF6200F5C144 /* AudioFX.swift */; };
+		135E2330280AC1F400F5C144 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E232F280AC1F400F5C144 /* AudioPlayer.swift */; };
+		135E2332280AC8B400F5C144 /* bell_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 135E2331280AC8B400F5C144 /* bell_sound.mp3 */; };
+		135E2336280AC93B00F5C144 /* InteractionAudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135E2335280AC93B00F5C144 /* InteractionAudioHandler.swift */; };
 		13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C37280618E800F71783 /* UIView+Extensions.swift */; };
 		13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C392806194800F71783 /* GodsCarouselBuilder.swift */; };
 		13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */; };
@@ -81,6 +86,11 @@
 		135E23222809CFD300F5C144 /* InteractionsPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsPanelViewModel.swift; sourceTree = "<group>"; };
 		135E23242809D1AA00F5C144 /* InteractionsPanelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsPanelBuilder.swift; sourceTree = "<group>"; };
 		135E23262809DA0700F5C144 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		135E232A280ABF1700F5C144 /* shankh_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shankh_sound.mp3; sourceTree = "<group>"; };
+		135E232C280ABF6200F5C144 /* AudioFX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFX.swift; sourceTree = "<group>"; };
+		135E232F280AC1F400F5C144 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		135E2331280AC8B400F5C144 /* bell_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell_sound.mp3; sourceTree = "<group>"; };
+		135E2335280AC93B00F5C144 /* InteractionAudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionAudioHandler.swift; sourceTree = "<group>"; };
 		13693C37280618E800F71783 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		13693C392806194800F71783 /* GodsCarouselBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GodsCarouselBuilder.swift; sourceTree = "<group>"; };
 		13693C3E28068F3700F71783 /* VirtualTempleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTempleViewModel.swift; sourceTree = "<group>"; };
@@ -184,6 +194,40 @@
 			path = language;
 			sourceTree = "<group>";
 		};
+		135E2328280ABF0600F5C144 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				135E2329280ABF0D00F5C144 /* audioFX */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		135E2329280ABF0D00F5C144 /* audioFX */ = {
+			isa = PBXGroup;
+			children = (
+				135E232A280ABF1700F5C144 /* shankh_sound.mp3 */,
+				135E2331280AC8B400F5C144 /* bell_sound.mp3 */,
+				135E232C280ABF6200F5C144 /* AudioFX.swift */,
+			);
+			path = audioFX;
+			sourceTree = "<group>";
+		};
+		135E232E280AC1E900F5C144 /* common-services */ = {
+			isa = PBXGroup;
+			children = (
+				135E232F280AC1F400F5C144 /* AudioPlayer.swift */,
+			);
+			path = "common-services";
+			sourceTree = "<group>";
+		};
+		135E2333280AC92100F5C144 /* temple-services */ = {
+			isa = PBXGroup;
+			children = (
+				135E2335280AC93B00F5C144 /* InteractionAudioHandler.swift */,
+			);
+			path = "temple-services";
+			sourceTree = "<group>";
+		};
 		13693C3B28068C4000F71783 /* Layers */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +288,8 @@
 		13D35A1828048F160033A96B /* VirualMandir */ = {
 			isa = PBXGroup;
 			children = (
+				135E232E280AC1E900F5C144 /* common-services */,
+				135E2328280ABF0600F5C144 /* resources */,
 				135E231C2809CC9000F5C144 /* language */,
 				13D35A4C28060FD90033A96B /* extensions */,
 				13D35A4728060CCA0033A96B /* model */,
@@ -285,6 +331,7 @@
 		13D35A3F28060A5E0033A96B /* virtual-temple */ = {
 			isa = PBXGroup;
 			children = (
+				135E2333280AC92100F5C144 /* temple-services */,
 				13693C3B28068C4000F71783 /* Layers */,
 				13693C3D28068EDD00F71783 /* VirtualTempleView */,
 				13D35A4A28060E390033A96B /* VirtualTempleErrors.swift */,
@@ -393,9 +440,11 @@
 				135E23052809880E00F5C144 /* flame_8.png in Resources */,
 				135E23092809880E00F5C144 /* flame_7.png in Resources */,
 				135E23022809880E00F5C144 /* flame_2.png in Resources */,
+				135E232B280ABF1700F5C144 /* shankh_sound.mp3 in Resources */,
 				135E23012809880E00F5C144 /* flame_6.png in Resources */,
 				135E23072809880E00F5C144 /* flame_9.png in Resources */,
 				13D35A2628048F170033A96B /* LaunchScreen.storyboard in Resources */,
+				135E2332280AC8B400F5C144 /* bell_sound.mp3 in Resources */,
 				135E23042809880E00F5C144 /* flame_1.png in Resources */,
 				135E23062809880E00F5C144 /* flame_3.png in Resources */,
 				13D35A2328048F170033A96B /* Assets.xcassets in Resources */,
@@ -426,6 +475,7 @@
 				13D35A1E28048F160033A96B /* ViewController.swift in Sources */,
 				13D35A50280614100033A96B /* CustomUIKitError.swift in Sources */,
 				13693C38280618E800F71783 /* UIView+Extensions.swift in Sources */,
+				135E2330280AC1F400F5C144 /* AudioPlayer.swift in Sources */,
 				1381BD5B28070FF20008400E /* AnimatingBellsView.swift in Sources */,
 				135E22F128096DCB00F5C144 /* FlowerEmitterLayer.swift in Sources */,
 				135E23202809CCC200F5C144 /* Strings.swift in Sources */,
@@ -434,10 +484,12 @@
 				13D35A4128060A8A0033A96B /* VirtualTempleView.swift in Sources */,
 				13D35A53280616650033A96B /* GodsCarouselViewModel.swift in Sources */,
 				1381BD5D28083D0C0008400E /* AnimatedBell.swift in Sources */,
+				135E232D280ABF6200F5C144 /* AudioFX.swift in Sources */,
 				13693C3F28068F3700F71783 /* VirtualTempleViewModel.swift in Sources */,
 				135E23252809D1AA00F5C144 /* InteractionsPanelBuilder.swift in Sources */,
 				13D35A4928060CD70033A96B /* God.swift in Sources */,
 				13693C3A2806194800F71783 /* GodsCarouselBuilder.swift in Sources */,
+				135E2336280AC93B00F5C144 /* InteractionAudioHandler.swift in Sources */,
 				13D35A55280616870033A96B /* GodsCarouselCollectionViewCell.swift in Sources */,
 				13D35A1A28048F160033A96B /* AppDelegate.swift in Sources */,
 				135E23172809A43F00F5C144 /* InteractionsPanelView.swift in Sources */,

@@ -12,6 +12,8 @@ enum Strings {
     case lightDiya
     case ringBell
     case offerFlowers
+    case noAudioFile
+    case technicalFailure
 }
 
 extension Strings {
@@ -27,6 +29,10 @@ extension Strings {
                 return "शंख बजाएं"
             case .ringBell:
                 return "घंटी बजाएं"
+            case .noAudioFile:
+                return "ध्वनि उपलब्ध नहीं है।"
+            case .technicalFailure:
+                return "तकनीकी बाधा के कारन यह करना संभव नहीं होगा। "
             }
         }
     }

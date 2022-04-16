@@ -7,21 +7,58 @@
 
 import Foundation
 
-protocol VirtualTempleViewModeling: InteractionsPanelModuleDelegate {
+protocol VirtualTempleViewModeling: InteractionsPanelModuleDelegate, AudioPlayerDelegate {
     var gods: [God] { get set }
+    var delegate: VirtualTempleViewModelDelegate? { get set }
+    var interactionAudioDuration: TimeInterval? { get }
+}
+
+protocol VirtualTempleViewModelDelegate: AnyObject {
+    func viewModelDidRequestToAnimate(interaction: MandirInteraction, forDuration duration: TimeInterval)
 }
 
 class VirtualTempleViewModel: VirtualTempleViewModeling {
     var gods: [God]
-    
+    var interactionAudioDuration: TimeInterval?
+    weak var delegate: VirtualTempleViewModelDelegate?
+    private var interactionAudioHandler: InteractionAudioHandling
+    private var latestInteraction: MandirInteraction?
     
     init(gods: [God]) {
         self.gods = gods
+        interactionAudioHandler = InteractionAudioHandler()
+        interactionAudioHandler.audioPlaybackDelegate = self
     }
 }
 
 extension VirtualTempleViewModel {
     func interactionsPanelDidRecordInteraction(_ interaction: MandirInteraction) {
-        print(interaction)
+        latestInteraction = interaction
+        interactionAudioHandler.handleAudioForInteraction(interaction)
+    }
+}
+
+extension VirtualTempleViewModel {
+    func audioPlayerDidStartPlaying(fx: AudioFX) {
+        guard
+            let animationDuration = interactionAudioDuration,
+            let lastInteraction = latestInteraction
+        else {
+            return
+        }
+        
+        delegate?.viewModelDidRequestToAnimate(interaction: lastInteraction, forDuration: animationDuration)
+    }
+    
+    func audioPlayerDidFinishPlaying(_ audioPlayer: AudioPlayer) {
+        interactionAudioDuration = nil
+    }
+    
+    func audioPlayer(_ audioPlayer: AudioPlayer, didEncounterError error: AudioPlayerError) {
+        
+    }
+    
+    func audioPlayer(_ audioPlayer: AudioPlayer, didReportDuration duration: TimeInterval) {
+        interactionAudioDuration = duration
     }
 }

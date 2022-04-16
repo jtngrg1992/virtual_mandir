@@ -9,7 +9,8 @@ import UIKit
 
 class InteractiveButton: UIControl {
     
-    let dashBorder = CAShapeLayer()
+    private let dashBorder = CAShapeLayer()
+    private var progressLayer: CAGradientLayer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,6 +67,41 @@ class InteractiveButton: UIControl {
     private func animateTransform(_ transformClosure: @escaping () -> Void) {
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: [.curveEaseInOut, .allowUserInteraction]) {
             transformClosure()
+        }
+    }
+    
+    final func animateProgress(withDuration duration: TimeInterval) {
+        let startLocations = [0, 0]
+        let endLocations = [1,2]
+        
+        let progressLayer = CAGradientLayer()
+        progressLayer.cornerRadius = layer.cornerRadius
+        progressLayer.colors = [UIColor.white.withAlphaComponent(0.5).cgColor, UIColor.clear.cgColor]
+        progressLayer.frame = self.bounds
+        progressLayer.locations = startLocations as [NSNumber]
+        progressLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        progressLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        self.layer.insertSublayer(progressLayer, at: 0)
+        self.progressLayer = progressLayer
+        
+        let anim = CABasicAnimation(keyPath: "locations")
+        anim.fromValue = startLocations
+        anim.toValue = endLocations
+        anim.duration = duration
+        anim.isRemovedOnCompletion = true
+        anim.delegate = self
+        progressLayer.add(anim, forKey: "loc")
+        progressLayer.locations = endLocations as [NSNumber]
+    }
+}
+
+extension InteractiveButton: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut) {
+            self.progressLayer?.opacity = 0
+        } completion: { _ in
+            self.progressLayer?.removeFromSuperlayer()
+            self.progressLayer = nil
         }
     }
 }

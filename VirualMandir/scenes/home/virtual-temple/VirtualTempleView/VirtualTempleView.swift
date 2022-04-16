@@ -11,7 +11,7 @@ protocol VirtualMandirLayer: View {
     func layoutYourselfOutInContainer()
 }
 
-protocol VirtualTempleViewing: View {
+protocol VirtualTempleViewing: View, VirtualTempleViewModelDelegate {
     var viewModel: VirtualTempleViewModeling? { get set }
     func getLayers() -> [VirtualMandirLayer]
 }
@@ -82,5 +82,12 @@ class VirtualTempleView: View, VirtualTempleViewing {
             animatedDiyaView,
             interactionsPanelView
         ]
+    }
+}
+
+
+extension VirtualTempleView {
+    func viewModelDidRequestToAnimate(interaction: MandirInteraction, forDuration duration: TimeInterval) {
+        interactionsPanelView.animateInteractionButton(forInteraction: interaction, forDuration: duration)
     }
 }

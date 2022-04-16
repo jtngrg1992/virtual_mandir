@@ -11,6 +11,7 @@ import UIKit
 protocol InteractionsPanelViewing: VirtualMandirLayer, InteractionsPanelViewModelDelegate {
     var viewModel: InteractionsPanelViewModelling? { get set }
     func setModuleDelegate(_ moduleDelegate: InteractionsPanelModuleDelegate?)
+    func animateInteractionButton(forInteraction interaction: MandirInteraction, forDuration duration: TimeInterval)
 }
 
 class InteractionsPanelView: View, InteractionsPanelViewing {
@@ -82,6 +83,16 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
     
     func setModuleDelegate(_ moduleDelegate: InteractionsPanelModuleDelegate?) {
         viewModel?.moduleDelegate = moduleDelegate
+    }
+    
+    
+    func animateInteractionButton(forInteraction interaction: MandirInteraction, forDuration duration: TimeInterval) {
+        guard
+            let targetButton = interactionButtons.first(where: { $0.interaction == interaction })
+        else {
+            return
+        }
+        targetButton.animateProgress(withDuration: duration)
     }
 }
 
