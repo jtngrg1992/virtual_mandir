@@ -7,30 +7,13 @@
 
 import UIKit
 
-protocol VirtualMandirLayer: View {
-    var isAnimating: Bool { get }
-    func layoutYourselfOutInContainer()
-    func startAnimating()
-    func stopAnimating()
-}
-
-extension VirtualMandirLayer {
-    var isAnimating: Bool {
-        false
-    }
-    
-    func startAnimating() {}
-    func stopAnimating() {}
-}
-
-protocol VirtualTempleViewing: View, VirtualTempleViewModelDelegate, AartiPanelListener, GodsCarouselListener {
-    var viewModel: VirtualTempleViewModeling? { get set }
+protocol VirtualTempleViewing: View, VirtualTemplePresenting, AartiPanelListener, GodsCarouselListener {
     func getLayers() -> [VirtualMandirLayer]
 }
 
 class VirtualTempleView: View, VirtualTempleViewing {
     private lazy var godsCarousel: GodsCarouselViewing = {
-        let carouselBuilderResult = GodsCarouselBuilder.build(withGods: self.viewModel?.gods ?? [], andListener: self)
+        let carouselBuilderResult = GodsCarouselBuilder.build(withGods: self.interactor?.gods ?? [], andListener: self)
         carouselBuilderResult.translatesAutoresizingMaskIntoConstraints = false
         return carouselBuilderResult
     }()
@@ -71,16 +54,11 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
-    var viewModel: VirtualTempleViewModeling? {
+    var interactor: VirtualTempleInteracting? {
         didSet {
-            godsCarousel.setGods(viewModel?.gods ?? [])
-            interactionsPanelView.setModuleDelegate(viewModel)
+            godsCarousel.setGods(interactor?.gods ?? [])
+            interactionsPanelView.setListener(interactor)
         }
-    }
-    
-    convenience init(viewModel: VirtualTempleViewModeling) {
-        self.init(frame: .zero)
-        self.viewModel = viewModel
     }
     
     override func setup() {
@@ -105,23 +83,19 @@ class VirtualTempleView: View, VirtualTempleViewing {
 
 
 extension VirtualTempleView {
-    func viewModelDidRequestToAnimate(interaction: MandirInteraction, forDuration duration: TimeInterval) {
+    func animate(interaction: MandirInteraction, forDuration duration: TimeInterval) {
         interactionsPanelView.animateInteractionButton(forInteraction: interaction, forDuration: duration)
     }
 }
 
 extension VirtualTempleView {
     func aartiPanelDidRequestArtiPlayback() {
-        viewModel?.handleAartiPlaybackRequest()
-    }
-    
-    func aartiPanelDidRequestArtiPause() {
-        viewModel?.handleAartiPauseRequest()
+        interactor?.handleAartiPlaybackRequest()
     }
 }
 
 extension VirtualTempleView {
     func godsCarouselDidScroll(toGod god: God) {
-        viewModel?.godOnDisplay = god
+        interactor?.godOnDisplay = god
     }
 }

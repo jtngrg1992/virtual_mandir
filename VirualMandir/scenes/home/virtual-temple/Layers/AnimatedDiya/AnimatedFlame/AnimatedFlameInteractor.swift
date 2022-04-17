@@ -1,5 +1,4 @@
 //
-//  AnimatedFlameViewModel.swift
 //  VirtualMandir
 //
 //  Created by Jatin Garg on 15/04/22.
@@ -7,14 +6,14 @@
 
 import UIKit
 
-protocol AnimatedFlameViewModelling {
+protocol AnimatedFlameInteracting {
     var flameAssetName: String { get set }
     var flameFrameRate: Int { get set }
     var separator: String { get set }
     var flameFrames: [UIImage] { get }
 }
 
-class AnimatedFlameViewModel: AnimatedFlameViewModelling {
+class AnimatedFlameInteractor: AnimatedFlameInteracting {
     public var flameAssetName: String
     public var flameFrameRate: Int
     public var separator: String

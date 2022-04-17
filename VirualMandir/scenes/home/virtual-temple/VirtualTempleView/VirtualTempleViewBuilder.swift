@@ -9,10 +9,10 @@ import Foundation
 
 class VirtualTempleViewBuilder {
     static func build(withGods gods: [God]) -> VirtualTempleViewing {
-        let viewModel: VirtualTempleViewModeling = VirtualTempleViewModel(gods: gods)
+        let interactor: VirtualTempleInteracting = VirtualTempleInteractor(gods: gods)
         let virtualTemple: VirtualTempleViewing = VirtualTempleView(frame: .zero)
-        viewModel.delegate = virtualTemple
-        virtualTemple.viewModel = viewModel
+        interactor.presenter = virtualTemple
+        virtualTemple.interactor = interactor
         return virtualTemple
     }
 }

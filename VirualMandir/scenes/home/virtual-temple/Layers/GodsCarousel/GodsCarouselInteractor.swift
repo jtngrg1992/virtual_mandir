@@ -1,5 +1,4 @@
 //
-//  GodsCarouselViewModel.swift
 //  VirtualMandir
 //
 //  Created by Jatin Garg on 13/04/22.

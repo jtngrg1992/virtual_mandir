@@ -9,9 +9,9 @@ import Foundation
 
 class AnimatedFlameBuilder {
     static func build(withAssetName assetName: String, frameRate: Int) -> AnimatedFlaming {
-        let viewModel: AnimatedFlameViewModelling = AnimatedFlameViewModel(flameAssetName: assetName, flameFrameRate: frameRate, separator: "_")
+        let interactor: AnimatedFlameInteracting = AnimatedFlameInteractor(flameAssetName: assetName, flameFrameRate: frameRate, separator: "_")
         let view: AnimatedFlaming = AnimatedFlame(frame: .zero)
-        view.viewModel = viewModel
+        view.interactor = interactor
         return view
     }
 }

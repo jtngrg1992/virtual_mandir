@@ -1,5 +1,4 @@
 //
-//  VirtualTempleViewModel.swift
 //  VirtualMandir
 //
 //  Created by Jatin Garg on 13/04/22.
@@ -7,30 +6,29 @@
 
 import Foundation
 
-protocol VirtualTempleViewModeling: InteractionsPanelModuleDelegate, AudioPlayerDelegate {
+protocol VirtualTempleInteracting: InteractionsPanelListener, AudioPlayerDelegate {
     var gods: [God] { get set }
     var godOnDisplay: God? { get set }
-    var delegate: VirtualTempleViewModelDelegate? { get set }
+    var presenter: VirtualTemplePresenting? { get set }
     var interactionAudioDuration: TimeInterval? { get }
     func handleAartiPlaybackRequest()
-    func handleAartiPauseRequest()
-    
 }
 
-protocol VirtualTempleViewModelDelegate: AnyObject {
+protocol VirtualTemplePresenting: AnyObject {
+    var interactor: VirtualTempleInteracting? { get set }
     var animatingBellsView:  AnimatingBellsViewing { get }
     var fallingFlowersView: FlowerFallViewing { get }
     var animatedDiyaView:  AnimatedDiyaViewing { get }
     var aartiPanelView: AartiPanelViewing { get set }
     
-    func viewModelDidRequestToAnimate(interaction: MandirInteraction, forDuration duration: TimeInterval)
+    func animate(interaction: MandirInteraction, forDuration duration: TimeInterval)
 }
 
-class VirtualTempleViewModel: VirtualTempleViewModeling {
+class VirtualTempleInteractor: VirtualTempleInteracting {
     var gods: [God]
     var interactionAudioDuration: TimeInterval?
     var godOnDisplay: God?
-    weak var delegate: VirtualTempleViewModelDelegate?
+    weak var presenter: VirtualTemplePresenting?
     private var interactionAudioHandler: InteractionAudioHandling
     private var layerAnimationScheduler: VirtualMandirLayerAnimationScheduling
     private var latestInteraction: MandirInteraction?
@@ -45,12 +43,12 @@ class VirtualTempleViewModel: VirtualTempleViewModeling {
     }
 }
 
-extension VirtualTempleViewModel {
+extension VirtualTempleInteractor {
     func interactionsPanelDidRecordInteraction(_ interaction: MandirInteraction) {
         latestInteraction = interaction
         interactionAudioHandler.handleAudioForInteraction(interaction)
         
-        guard let delegate = delegate else {
+        guard let delegate = presenter else {
             return
         }
         
@@ -74,17 +72,13 @@ extension VirtualTempleViewModel {
         }
     }
     
-    func handleAartiPauseRequest() {
-        
-    }
-    
     func handleAartiPlaybackRequest() {
         guard let god = godOnDisplay else { return }
-        delegate?.aartiPanelView.startPlayingAarti(forGod: god)
+        presenter?.aartiPanelView.startPlayingAarti(forGod: god)
     }
 }
 
-extension VirtualTempleViewModel {
+extension VirtualTempleInteractor {
     func audioPlayerDidStartPlaying(fx: AudioFX) {
         guard
             let animationDuration = interactionAudioDuration,
@@ -92,7 +86,7 @@ extension VirtualTempleViewModel {
         else {
             return
         }
-        delegate?.viewModelDidRequestToAnimate(interaction: lastInteraction, forDuration: animationDuration)
+        presenter?.animate(interaction: lastInteraction, forDuration: animationDuration)
     }
     
     func audioPlayerDidFinishPlaying(_ audioPlayer: AudioPlayer) {

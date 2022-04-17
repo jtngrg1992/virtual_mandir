@@ -10,9 +10,9 @@ import Foundation
 class InteractionsPanelBuilder {
     static func build(withInteractions interactions: [MandirInteraction]) -> InteractionsPanelViewing {
         let view: InteractionsPanelViewing = InteractionsPanelView()
-        var viewmodel: InteractionsPanelViewModelling = InteractionsPanelViewModel(supportedInteractions: interactions)
-        viewmodel.delegate = view
-        view.viewModel = viewmodel
+        var interactor: InteractionsPanelViewInteracting = InteractionsPanelInteractor(supportedInteractions: interactions)
+        interactor.delegate = view
+        view.interactor = interactor
         return view
     }
 }

@@ -8,16 +8,15 @@
 import UIKit
 
 
-protocol InteractionsPanelViewing: VirtualMandirLayer, InteractionsPanelViewModelDelegate {
-    var viewModel: InteractionsPanelViewModelling? { get set }
-    func setModuleDelegate(_ moduleDelegate: InteractionsPanelModuleDelegate?)
+protocol InteractionsPanelViewing: VirtualMandirLayer, InteractionsPanelPresenting {
+    func setListener(_ moduleDelegate: InteractionsPanelListener?)
     func animateInteractionButton(forInteraction interaction: MandirInteraction, forDuration duration: TimeInterval)
 }
 
 class InteractionsPanelView: View, InteractionsPanelViewing {
-    var viewModel: InteractionsPanelViewModelling? {
+    var interactor: InteractionsPanelViewInteracting? {
         willSet {
-            if viewModel == nil && newValue != nil {
+            if interactor == nil && newValue != nil {
                 newValue?.generateInteractionButtons()
             }
         }
@@ -80,10 +79,9 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
         return result
     }
     
-    func setModuleDelegate(_ moduleDelegate: InteractionsPanelModuleDelegate?) {
-        viewModel?.moduleDelegate = moduleDelegate
+    func setListener(_ moduleDelegate: InteractionsPanelListener?) {
+        interactor?.listener = moduleDelegate
     }
-    
     
     func animateInteractionButton(forInteraction interaction: MandirInteraction, forDuration duration: TimeInterval) {
         guard
@@ -95,9 +93,8 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
     }
 }
 
-
 extension InteractionsPanelView {
-    func viewModelDidUpdateInteractionButtons(col1: [InteractionsPanelButtonInterface], col2: [InteractionsPanelButtonInterface]) {
+    func interactionButtonsUpdated(col1: [InteractionsPanelButtonInterface], col2: [InteractionsPanelButtonInterface]) {
         interactionButtons = []
         if !col1.isEmpty {
             populate(stack: leftStack, withInteractions: col1)

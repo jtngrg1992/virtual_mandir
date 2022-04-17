@@ -8,14 +8,14 @@
 import UIKit
 
 protocol AnimatedFlaming: UIImageView {
-    var viewModel: AnimatedFlameViewModelling? { get set }
+    var interactor: AnimatedFlameInteracting? { get set }
 }
 
 class AnimatedFlame: UIImageView, AnimatedFlaming {
     
-    public var viewModel: AnimatedFlameViewModelling? {
+    public var interactor: AnimatedFlameInteracting? {
         didSet {
-            guard let flameAssets = viewModel?.flameFrames else { return }
+            guard let flameAssets = interactor?.flameFrames else { return }
             animationImages = flameAssets
         }
     }
