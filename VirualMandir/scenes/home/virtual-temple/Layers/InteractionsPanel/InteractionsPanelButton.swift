@@ -15,7 +15,7 @@ protocol InteractionsPanelButtonInterface: InteractiveButton {
 class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterface {
     var interaction: MandirInteraction!
     
-    private var imageView: UIImageView = {
+    final var imageView: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.contentMode = .scaleAspectFit
@@ -31,7 +31,7 @@ class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterfa
         return lable
     }()
     
-    private var contentStack: UIStackView = {
+    final var contentStack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.alignment = .center
@@ -39,8 +39,8 @@ class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterfa
         return stack
     }()
     
-    private var imageWidthConstraint: NSLayoutConstraint!
-    private var imageHeightConstriant: NSLayoutConstraint!
+    var imageWidthConstraint: NSLayoutConstraint!
+    var imageHeightConstriant: NSLayoutConstraint!
     
     override func setup() {
         super.setup()
@@ -69,7 +69,7 @@ class InteractionsPanelButton: InteractiveButton, InteractionsPanelButtonInterfa
         imageHeightConstriant.constant = bounds.width * 0.5
     }
     
-    public func setContent(title: String?, image: UIImage?) {
+    func setContent(title: String?, image: UIImage?) {
         imageView.image = image
         titleLabel.text = title
     }

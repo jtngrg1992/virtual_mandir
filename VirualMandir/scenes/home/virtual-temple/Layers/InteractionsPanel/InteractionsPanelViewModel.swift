@@ -12,6 +12,8 @@ enum MandirInteraction {
     case offerFlowers
     case playShankh
     case ringBell
+    case playAarti
+    case pauseAarti
 }
 
 extension MandirInteraction {
@@ -25,6 +27,10 @@ extension MandirInteraction {
             return Strings.playShankh.getLocalizedString(forLanguage: .hindi)
         case .ringBell:
             return Strings.ringBell.getLocalizedString(forLanguage: .hindi)
+        case .playAarti:
+            return Strings.playAarti.getLocalizedString(forLanguage: .hindi)
+        case .pauseAarti:
+            return Strings.pauseAarti.getLocalizedString(forLanguage: .hindi)
         }
     }
     
@@ -39,6 +45,10 @@ extension MandirInteraction {
             imageName = "shankh_thumb"
         case .ringBell:
             imageName = "bell_thumb"
+        case .playAarti:
+            imageName = "play_button"
+        case .pauseAarti:
+            imageName = "pause_button"
         }
         return UIImage(named: imageName)
     }
@@ -111,7 +121,7 @@ class InteractionsPanelViewModel: InteractionsPanelViewModelling {
         if chunkedInteractions.count > 1 {
             columnTwoInteractions = chunkedInteractions[1]
         }
-    
+        
         delegate.viewModelDidUpdateInteractionButtons(col1: columnOneInteractions, col2: columnTwoInteractions)
     }
 }

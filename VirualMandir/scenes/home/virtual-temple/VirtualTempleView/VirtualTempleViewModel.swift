@@ -9,14 +9,19 @@ import Foundation
 
 protocol VirtualTempleViewModeling: InteractionsPanelModuleDelegate, AudioPlayerDelegate {
     var gods: [God] { get set }
+    var godOnDisplay: God? { get set }
     var delegate: VirtualTempleViewModelDelegate? { get set }
     var interactionAudioDuration: TimeInterval? { get }
+    func handleAartiPlaybackRequest()
+    func handleAartiPauseRequest()
+    
 }
 
 protocol VirtualTempleViewModelDelegate: AnyObject {
     var animatingBellsView:  AnimatingBellsViewing { get }
     var fallingFlowersView: FlowerFallViewing { get }
     var animatedDiyaView:  AnimatedDiyaViewing { get }
+    var aartiPanelView: AartiPanelViewing { get set }
     
     func viewModelDidRequestToAnimate(interaction: MandirInteraction, forDuration duration: TimeInterval)
 }
@@ -24,6 +29,7 @@ protocol VirtualTempleViewModelDelegate: AnyObject {
 class VirtualTempleViewModel: VirtualTempleViewModeling {
     var gods: [God]
     var interactionAudioDuration: TimeInterval?
+    var godOnDisplay: God?
     weak var delegate: VirtualTempleViewModelDelegate?
     private var interactionAudioHandler: InteractionAudioHandling
     private var layerAnimationScheduler: VirtualMandirLayerAnimationScheduling
@@ -32,6 +38,7 @@ class VirtualTempleViewModel: VirtualTempleViewModeling {
     
     init(gods: [God]) {
         self.gods = gods
+        godOnDisplay = gods.first
         interactionAudioHandler = InteractionAudioHandler()
         layerAnimationScheduler = VirtualmandirLayerAnimationScheduler()
         interactionAudioHandler.audioPlaybackDelegate = self
@@ -65,6 +72,15 @@ extension VirtualTempleViewModel {
         if layerAnimationScheduler.canSubmitAnimation(forLayer: layerToAnimate!) {
             layerAnimationScheduler.submitAnimation(forLayer: layerToAnimate!)
         }
+    }
+    
+    func handleAartiPauseRequest() {
+        
+    }
+    
+    func handleAartiPlaybackRequest() {
+        guard let god = godOnDisplay else { return }
+        delegate?.aartiPanelView.startPlayingAarti(forGod: god)
     }
 }
 

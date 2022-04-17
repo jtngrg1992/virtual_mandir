@@ -19,6 +19,7 @@ extension AudioPlayerDelegate {
     func audioPlayerDidStartPlaying(fx: AudioFX) {}
     func audioPlayer(_ audioPlayer: AudioPlayer, didChangeProgressTo progress: Double) {}
     func audioPlayerDidFinishPlaying(_ audioPlayer: AudioPlayer){}
+    func audioPlayer(_ audioPlayer: AudioPlayer, didReportDuration duration: TimeInterval){}
 }
 
 protocol AudioPlaying: NSObject, AVAudioPlayerDelegate {
@@ -26,6 +27,8 @@ protocol AudioPlaying: NSObject, AVAudioPlayerDelegate {
     var delegate: AudioPlayerDelegate? { get set }
     var isPlaying: Bool { get }
     func playAudio(_ audio: AudioFX)
+    func pauseAudio()
+    func resumeAudio()
     func stopAudio(_ audio: AudioFX)
 }
 
@@ -100,6 +103,15 @@ class AudioPlayer: NSObject, AudioPlaying {
         }
     }
     
+    
+    func pauseAudio() {
+        player?.pause()
+    }
+    
+    func resumeAudio() {
+        player?.play()
+    }
+    
     func stopAudio(_ audio: AudioFX) {
         guard let player = player, isPlaying else {
             return
@@ -130,5 +142,4 @@ extension AudioPlayer {
         delegate?.audioPlayerDidFinishPlaying(self)
         invalidateTimeObserver()
     }
-    
 }

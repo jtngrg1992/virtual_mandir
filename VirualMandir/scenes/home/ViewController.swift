@@ -13,10 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let gods = [
-            God(id: 1, name: "Lord Hanuman", image: UIImage(named: "hanuman")!),
-            God(id: 1, name: "Lord Hanuman", image: UIImage(named: "hanuman")!)
+            God(id: 1,
+                name: "Lord Hanuman",
+                image: UIImage(named: "hanuman")!,
+                artiMusic: .hanumanChalisa),
+            God(id: 2,
+                name: "Lord Shiva",
+                image: UIImage(named: "shiva")!,
+                artiMusic: .shankarArti)
         ]
         
+        view.backgroundColor = .white
         let v = VirtualTempleViewBuilder.build(withGods: gods)
         v.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(v)

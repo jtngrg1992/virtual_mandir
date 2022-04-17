@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol GodsCarouselViewing: GodsCarouselViewModelDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, VirtualMandirLayer {
-    var viewModel: GodsCarouselViewModeling? { get set }
-    
+protocol GodsCarouselViewing: GodsCarouselPresenter, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, VirtualMandirLayer {
     func setGods(_ gods: [God])
 }
 
@@ -30,7 +28,7 @@ class GodsCarouselView: View, GodsCarouselViewing {
         return c
     }()
     
-    public var viewModel: GodsCarouselViewModeling? {
+    public var interactor: GodsCarouselInteracting! {
         didSet{
             collectionView.reloadData()
         }
@@ -43,7 +41,7 @@ class GodsCarouselView: View, GodsCarouselViewing {
     }
     
     func setGods(_ gods: [God]) {
-        viewModel?.setGods(gods)
+        interactor.setGods(gods)
     }
 }
 
@@ -56,12 +54,7 @@ extension GodsCarouselView {
 extension GodsCarouselView {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        guard
-            let godCount = viewModel?.godCount
-        else {
-            return 0
-        }
-        return godCount
+        return interactor.godCount
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -86,12 +79,17 @@ extension GodsCarouselView {
         }
         
         do {
-            cell.god = try viewModel?.god(atIndex: indexPath.item)
+            cell.god = try interactor.god(atIndex: indexPath.item)
         } catch (let error) {
             fatalError(error.localizedDescription)
         }
         
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        interactor.handleDisplay(ofItemAtIndex: indexPath.item)
     }
 }
 

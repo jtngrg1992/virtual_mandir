@@ -11,6 +11,8 @@ import Foundation
 enum AudioFX {
     case shankhSound
     case bellSound
+    case hanumanChalisa
+    case shankarArti
 }
 
 extension AudioFX {
@@ -20,6 +22,10 @@ extension AudioFX {
             return "shankh_sound"
         case .bellSound:
             return "bell_sound"
+        case .hanumanChalisa:
+            return "hanuman_chalisa"
+        case .shankarArti:
+            return "shankar_arti"
         }
     }
     

@@ -23,14 +23,14 @@ extension VirtualMandirLayer {
     func stopAnimating() {}
 }
 
-protocol VirtualTempleViewing: View, VirtualTempleViewModelDelegate {
+protocol VirtualTempleViewing: View, VirtualTempleViewModelDelegate, AartiPanelListener, GodsCarouselListener {
     var viewModel: VirtualTempleViewModeling? { get set }
     func getLayers() -> [VirtualMandirLayer]
 }
 
 class VirtualTempleView: View, VirtualTempleViewing {
     private lazy var godsCarousel: GodsCarouselViewing = {
-        let carouselBuilderResult = GodsCarouselBuilder.build(withGods: self.viewModel?.gods ?? [])
+        let carouselBuilderResult = GodsCarouselBuilder.build(withGods: self.viewModel?.gods ?? [], andListener: self)
         carouselBuilderResult.translatesAutoresizingMaskIntoConstraints = false
         return carouselBuilderResult
     }()
@@ -65,6 +65,11 @@ class VirtualTempleView: View, VirtualTempleViewing {
         return view
     }()
     
+    lazy var aartiPanelView: AartiPanelViewing = {
+        let view: AartiPanelViewing = AartiPanelBuilder.build(withListener: self)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     var viewModel: VirtualTempleViewModeling? {
         didSet {
@@ -92,7 +97,8 @@ class VirtualTempleView: View, VirtualTempleViewing {
             curtainArchView,
             fallingFlowersView,
             animatedDiyaView,
-            interactionsPanelView
+            interactionsPanelView,
+            aartiPanelView
         ]
     }
 }
@@ -101,5 +107,21 @@ class VirtualTempleView: View, VirtualTempleViewing {
 extension VirtualTempleView {
     func viewModelDidRequestToAnimate(interaction: MandirInteraction, forDuration duration: TimeInterval) {
         interactionsPanelView.animateInteractionButton(forInteraction: interaction, forDuration: duration)
+    }
+}
+
+extension VirtualTempleView {
+    func aartiPanelDidRequestArtiPlayback() {
+        viewModel?.handleAartiPlaybackRequest()
+    }
+    
+    func aartiPanelDidRequestArtiPause() {
+        viewModel?.handleAartiPauseRequest()
+    }
+}
+
+extension VirtualTempleView {
+    func godsCarouselDidScroll(toGod god: God) {
+        viewModel?.godOnDisplay = god
     }
 }
