@@ -56,6 +56,14 @@ class VirtualMandirLayerAnimation: VirtualMandirLayerAnimating {
     
 }
 
+
+/*
+    This schedules Mandir Animations so that no conficting animations
+    can be performed in parallel.
+    This will also prevent any possible animation overload in events where users
+    press an interaction button too many times just to play around.
+ */
+
 class VirtualmandirLayerAnimationScheduler: VirtualMandirLayerAnimationScheduling {
     private var animations: [VirtualMandirLayerAnimating] = []
     

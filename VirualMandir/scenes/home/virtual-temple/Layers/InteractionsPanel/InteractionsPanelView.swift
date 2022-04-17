@@ -13,6 +13,13 @@ protocol InteractionsPanelViewing: VirtualMandirLayer, InteractionsPanelPresenti
     func animateInteractionButton(forInteraction interaction: MandirInteraction, forDuration duration: TimeInterval)
 }
 
+
+/*
+    This is a dumb layer that displays all the mandir interactions (except Aarti playback)
+    in a single view. The interactions can be found inside MandirInteractions enum.
+    This has been coded in such a manner that adding any future interactions is extremly easy.
+ */
+
 class InteractionsPanelView: View, InteractionsPanelViewing {
     var interactor: InteractionsPanelViewInteracting? {
         willSet {
@@ -37,9 +44,10 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
         return stack
     }
     
-    private var leftStack: UIStackView!
-    private var rightStack: UIStackView!
-    private var interactionButtons: [InteractionsPanelButtonInterface] = []
+    private var leftStack: UIStackView! // contains all the interactions on left side of the mandir
+    private var rightStack: UIStackView! // contains all the interactions on right side of the mandir
+    
+    private var interactionButtons: [InteractionsPanelButtonInterface] = [] // an array containing instances of all interaction buttons
     
     override func setup() {
         leftStack = stackTemplate
@@ -66,6 +74,7 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        // this will ensure that the layer doesn't prevent user from scrolling between Gods
         var result: Bool = false
         
         for button in interactionButtons {
@@ -93,6 +102,7 @@ class InteractionsPanelView: View, InteractionsPanelViewing {
     }
 }
 
+// MARK: Presenter & View Methods
 extension InteractionsPanelView {
     func interactionButtonsUpdated(col1: [InteractionsPanelButtonInterface], col2: [InteractionsPanelButtonInterface]) {
         interactionButtons = []

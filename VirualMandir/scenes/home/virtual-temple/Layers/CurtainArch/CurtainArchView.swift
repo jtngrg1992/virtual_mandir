@@ -9,6 +9,8 @@ import UIKit
 
 protocol CurtainArchViewing: VirtualMandirLayer {}
 
+/// This represents the Arch with red curtain that you see in the mandir
+
 class CurtainArchView: View, CurtainArchViewing {
     
     private var archImageView: UIImageView = {

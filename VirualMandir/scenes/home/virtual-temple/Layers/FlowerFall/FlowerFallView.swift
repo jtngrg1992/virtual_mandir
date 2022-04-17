@@ -10,6 +10,8 @@ import UIKit
 
 protocol FlowerFallViewing: VirtualMandirLayer {}
 
+/// this houses and manages the FlowerEmitterLayer
+
 class FlowerFallView: View, FlowerFallViewing {
     
     var isAnimating: Bool = false

@@ -72,6 +72,7 @@ class AartiPanelInteractor: AartiPanelInteracting {
     }
 }
 
+// MARK: - AudioPlayer Delegate
 extension AartiPanelInteractor {
     func audioPlayerDidStartPlaying(fx: AudioFX) {
         isPlayingAarti = true

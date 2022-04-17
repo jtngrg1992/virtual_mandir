@@ -11,6 +11,9 @@ protocol AnimatedFlaming: UIImageView {
     var interactor: AnimatedFlameInteracting? { get set }
 }
 
+///  This is just an imageview that is supposed to jot through the various flame frames that have been supplied
+///  in order to mimic a burning flame. Frame rate is quite low because of lack of assets
+
 class AnimatedFlame: UIImageView, AnimatedFlaming {
     
     public var interactor: AnimatedFlameInteracting? {

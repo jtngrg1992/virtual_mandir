@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// Basic model representing a God being displayed
+
 struct God {
     let id: Int
     let name: String

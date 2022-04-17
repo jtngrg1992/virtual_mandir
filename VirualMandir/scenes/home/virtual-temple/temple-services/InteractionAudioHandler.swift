@@ -13,6 +13,10 @@ protocol InteractionAudioHandling {
     func handleAudioForInteraction(_ interaction: MandirInteraction)
 }
 
+
+/// Basic service to decide and play the appropriate sound effect for any mandir interaction.
+/// Read MandirInteractionSwift for more details.
+
 class InteractionAudioHandler: InteractionAudioHandling {
     private let audioPlayer = AudioPlayer()
     weak var audioPlaybackDelegate: AudioPlayerDelegate? {

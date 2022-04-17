@@ -12,6 +12,8 @@ protocol FlowerEmitterLaying: CAEmitterLayer {
     func setBirthRate(to value: Float)
 }
 
+/// this layer emits marigold and rose petals randomly from top of the screen with an acceleration of 9.8 m/s2
+
 class FlowerEmitterLayer: CAEmitterLayer, FlowerEmitterLaying {
     private var flowerImages: [FallingFlowering] = []
     

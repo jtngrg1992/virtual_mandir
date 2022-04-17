@@ -18,6 +18,9 @@ protocol AartiPanelViewing: VirtualMandirLayer, AartiPanelPresenting {
     func pausePlayingAarti()
 }
 
+/// This Layer Represents the Aarti button and is reponsible to playing, pausing and stopping arti corresponding to the
+/// God on display.
+
 class AartiPanelView: View, AartiPanelViewing {
     
     var aartiButton: AartiButtonInterface = {

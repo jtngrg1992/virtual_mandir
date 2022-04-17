@@ -11,7 +11,7 @@ class InteractionsPanelBuilder {
     static func build(withInteractions interactions: [MandirInteraction]) -> InteractionsPanelViewing {
         let view: InteractionsPanelViewing = InteractionsPanelView()
         var interactor: InteractionsPanelViewInteracting = InteractionsPanelInteractor(supportedInteractions: interactions)
-        interactor.delegate = view
+        interactor.presenter = view
         view.interactor = interactor
         return view
     }

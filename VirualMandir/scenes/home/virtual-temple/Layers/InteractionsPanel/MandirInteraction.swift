@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+/// All the interactions supported by the Mandir can be found here
 enum MandirInteraction {
     case lightDiya
     case offerFlowers

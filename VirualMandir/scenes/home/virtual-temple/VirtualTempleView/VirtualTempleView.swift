@@ -11,6 +11,21 @@ protocol VirtualTempleViewing: View, VirtualTemplePresenting, AartiPanelListener
     func getLayers() -> [VirtualMandirLayer]
 }
 
+/*
+    this is the Core view representing the mandir that we see on the screen
+    It has following layers displayed in chronological order:
+        1. Gods Carousel - List of Gods
+        2. Arch with Curtain - The red curtain arch that we see in the mandir
+        3. Animated Bells - the two bells below the curtain
+        4. Animated Flowers - The flowers that start falling from the top
+        5. Animated Diya - The diya that lights up
+        6. Interactions Panel - The various buttons that allow us to animate the layers above in this list.
+        7. Aari Panel - The aarti button that handle aarti playback and pause.
+ 
+    Each layer has been added as a subview to this. The interactor is responsible for orchestrating the interactions
+    between various layers.
+ */
+
 class VirtualTempleView: View, VirtualTempleViewing {
     private lazy var godsCarousel: GodsCarouselViewing = {
         let carouselBuilderResult = GodsCarouselBuilder.build(withGods: self.interactor?.gods ?? [], andListener: self)
@@ -82,18 +97,21 @@ class VirtualTempleView: View, VirtualTempleViewing {
 }
 
 
+// MARK: - Presenter Methods
 extension VirtualTempleView {
     func animate(interaction: MandirInteraction, forDuration duration: TimeInterval) {
         interactionsPanelView.animateInteractionButton(forInteraction: interaction, forDuration: duration)
     }
 }
 
+// MARK: - AartiPanel Delegate Methods
 extension VirtualTempleView {
     func aartiPanelDidRequestArtiPlayback() {
         interactor?.handleAartiPlaybackRequest()
     }
 }
 
+// MARK: - GodsCarousel Delegate Methods
 extension VirtualTempleView {
     func godsCarouselDidScroll(toGod god: God) {
         interactor?.godOnDisplay = god

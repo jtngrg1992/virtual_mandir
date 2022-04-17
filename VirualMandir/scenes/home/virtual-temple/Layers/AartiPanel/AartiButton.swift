@@ -14,6 +14,14 @@ protocol AartiButtonInterface: InteractionsPanelButton {
     func switchToPlay()
 }
 
+/*
+    A heavily modified subclass in interactive button.
+    Subclassing was necessary because we wanted all the featureset of interactive button
+    along with having a circular progress layer around the button to indicate the status
+    of Aarti playback.
+    This also serves as a play/pause Aarti button.
+ */
+
 class AartiButton: InteractionsPanelButton, AartiButtonInterface {
     
     let progressLayer: CAShapeLayer = {

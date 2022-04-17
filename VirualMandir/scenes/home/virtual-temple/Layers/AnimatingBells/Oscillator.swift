@@ -12,6 +12,12 @@ protocol OscillatorViewing: View, CAAnimationDelegate {
     func stopOscillating()
 }
 
+/*
+    this class basically serializes 3 animations to make it look like
+    that the view is oscillating between two points.
+    this is not physically acurate yet but this should do for this mock project
+ */
+
 class OscillatorView: View, OscillatorViewing {
     private let timeTakenForOneOscillation: CFTimeInterval = 2
     private let animationAngle = CGFloat.pi/15

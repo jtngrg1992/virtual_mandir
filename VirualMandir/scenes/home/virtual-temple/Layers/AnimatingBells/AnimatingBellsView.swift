@@ -36,6 +36,7 @@ class AnimatingBellsView: View, AnimatingBellsViewing {
     }
 }
 
+// MARK: - VirtualMandirLayer methods
 extension AnimatingBellsView {
     public func startAnimating() {
         leftBell.startOscillating()

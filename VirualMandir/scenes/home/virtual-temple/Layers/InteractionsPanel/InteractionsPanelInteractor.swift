@@ -13,7 +13,7 @@ protocol InteractionsPanelListener: AnyObject {
 protocol InteractionsPanelViewInteracting {
     var supportedInteractions: [MandirInteraction] { get set }
     var interactionsPerSide: Int {  get }
-    var delegate: InteractionsPanelPresenting? { get set }
+    var presenter: InteractionsPanelPresenting? { get set }
     var listener: InteractionsPanelListener? { get set }
     func generateInteractionButtons()
 }
@@ -36,7 +36,7 @@ class InteractionsPanelInteractor: InteractionsPanelViewInteracting {
         return 2
     }
     
-    weak var delegate: InteractionsPanelPresenting?
+    weak var presenter: InteractionsPanelPresenting?
     
     weak var listener: InteractionsPanelListener?
     
@@ -50,7 +50,7 @@ class InteractionsPanelInteractor: InteractionsPanelViewInteracting {
     }
     
     func generateInteractionButtons() {
-        guard let delegate = delegate else {
+        guard let delegate = presenter else {
             return
         }
         let interactionButtons: [InteractionsPanelButtonInterface] = supportedInteractions.map { interaction in

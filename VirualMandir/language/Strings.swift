@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// This contains translations of all the strings that are to be displayed to the user
+
 enum Strings {
     case playShankh
     case lightDiya

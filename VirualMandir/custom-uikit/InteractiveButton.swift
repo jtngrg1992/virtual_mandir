@@ -7,6 +7,16 @@
 
 import UIKit
 
+
+/*
+ Basic implmentation of a Button that:
+    1. Scales up when touches begin
+    2. Scales down when touches are lifted.
+    3. Offers a dashed border all around.
+    4. Is Circular in shape.
+    5. Offers capability to add fill animation of arbitrary duration, if needed.
+*/
+
 class InteractiveButton: UIControl {
     
     private let dashBorder = CAShapeLayer()
@@ -33,7 +43,6 @@ class InteractiveButton: UIControl {
         layer.shadowRadius = 3
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 0, height: 10)
-        
         
         dashBorder.lineWidth = 2
         dashBorder.strokeColor = UIColor.white.cgColor
@@ -71,6 +80,11 @@ class InteractiveButton: UIControl {
     }
     
     final func animateProgress(withDuration duration: TimeInterval) {
+        /*
+         this animatingly fills up the button with a sublte light gradient
+         to indicate progress of the long running action that this button is
+         supposed to perform.
+        */
         let startLocations = [0, 0]
         let endLocations = [1,2]
         

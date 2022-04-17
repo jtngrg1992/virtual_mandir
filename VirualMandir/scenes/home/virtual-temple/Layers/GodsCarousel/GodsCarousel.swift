@@ -11,6 +11,10 @@ protocol GodsCarouselViewing: GodsCarouselPresenter, UICollectionViewDataSource,
     func setGods(_ gods: [God])
 }
 
+/*
+    Gods carousel is basically a horizontally scrolling list
+    of the Gods that can be displayed in the mandir
+ */
 class GodsCarouselView: View, GodsCarouselViewing {
     
     private lazy var collectionView: UICollectionView = {
@@ -51,6 +55,8 @@ extension GodsCarouselView {
     }
 }
 
+
+// MARK: - Collection view methods
 extension GodsCarouselView {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {

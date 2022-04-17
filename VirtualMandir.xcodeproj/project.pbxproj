@@ -338,20 +338,12 @@
 				13D35A4728060CCA0033A96B /* model */,
 				13D35A4228060A990033A96B /* custom-uikit */,
 				13D35A3D28060A410033A96B /* scenes */,
-				13D35A3C2805A47F0033A96B /* common-widgets */,
 				13D35A1928048F160033A96B /* AppDelegate.swift */,
 				13D35A2228048F170033A96B /* Assets.xcassets */,
 				13D35A2428048F170033A96B /* LaunchScreen.storyboard */,
 				13D35A2728048F170033A96B /* Info.plist */,
 			);
 			path = VirualMandir;
-			sourceTree = "<group>";
-		};
-		13D35A3C2805A47F0033A96B /* common-widgets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "common-widgets";
 			sourceTree = "<group>";
 		};
 		13D35A3D28060A410033A96B /* scenes */ = {

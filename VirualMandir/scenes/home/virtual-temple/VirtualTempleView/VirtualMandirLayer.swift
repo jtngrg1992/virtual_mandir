@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Base protocol that every Mandir Layer should conform to
+
 protocol VirtualMandirLayer: View {
     var isAnimating: Bool { get }
     func layoutYourselfOutInContainer()
